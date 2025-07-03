@@ -3,7 +3,7 @@
 Manual & API Testing for TaskPro application.
 
 Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı arayüzü) ve API testlerinin manuel olarak hazırlanması ve çalıştırılması sürecini kapsamaktadır. Test senaryoları TestRail üzerinde yazılmış ve koşulmuştur. API testleri ayrıca Postman ile çalıştırılmış, Newman ile raporlanmıştır.
---
+
 
 ## Proje Kaynakları
 
@@ -18,7 +18,7 @@ Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı aray�
 -TestRail üzerinden test senaryoları çalıştırıldı ve sonuçlara dair raporlar alındı.
 -Swagger dokümanı Postman’e import edilip, environment oluşturularak API endpoint’leri test edildi.
 -API testleri Newman kullanılarak koşturuldu ve sonuçlar hem HTML hem de PDF formatında raporlandı.
-   -
+   
 ## Kullanılan Araçlar
 
 - Postman
