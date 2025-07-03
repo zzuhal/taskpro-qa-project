@@ -13,11 +13,11 @@ Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı aray�
 
 ## Proje Kapsamı 
 
--Şartname ve Figma tasarımları ele alınarak, UI test senaryoları için hem pozitif hem negatif test senaryoları TestRail üzerinde hazırlandı.
--Swagger dokümantasyonu incelenerek, API test senaryoları için hem pozitif hem negatif test senaryoları TestRail üzerinde hazırlandı.
--TestRail üzerinden test senaryoları çalıştırıldı ve sonuçlara dair raporlar alındı.
--Swagger dokümanı Postman’e import edilip, environment oluşturularak API endpoint’leri test edildi.
--API testleri Newman kullanılarak koşturuldu ve sonuçlar hem HTML hem de PDF formatında raporlandı.
+- Şartname ve Figma tasarımları ele alınarak, UI test senaryoları için hem pozitif hem negatif test senaryoları TestRail üzerinde hazırlandı.
+- Swagger dokümantasyonu incelenerek, API test senaryoları için hem pozitif hem negatif test senaryoları TestRail üzerinde hazırlandı.
+- TestRail üzerinden test senaryoları çalıştırıldı ve sonuçlara dair raporlar alındı.
+- Swagger dokümanı Postman’e import edilip, environment oluşturularak API endpoint’leri test edildi.
+- API testleri Newman kullanılarak koşturuldu ve sonuçlar hem HTML hem de PDF formatında raporlandı.
    
 ## Kullanılan Araçlar
 
