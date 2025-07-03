@@ -1,0 +1,3170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite>
+	<id>S1</id>
+	<name>TaskPro Project</name>
+	<description></description>
+	<sections>
+		<section>
+		<name>TaskPro UI Manual Tests</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Kayıt ve Giriş İşlemleri</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C189</id>
+				<title>Log In – Boş e-posta alanı ile giriş denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro uygulamasının giriş sayfasına erişmiş olmalıdır.
+İnternet bağlantısı aktif olmalıdır.
+Tarayıcı (örneğin Chrome) açık olmalı ve uygulama sayfası yüklenmiş olmalıdır.
+Giriş formu (e-mail ve parola alanları) görünür durumda olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro giriş sayfası açılır.</content><expected>Giriş sayfası düzgün şekilde yüklenmiş olmalıdır.</expected></step>
+<step>
+<content>E-posta alanı boş bırakılıp sadece şifre girilir ve &quot;Log In Now&quot; butonuna tıklanır.</content><expected>E-posta alanının altında &quot;Is Required&quot; mesajı görüntülenmelidir.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C190</id>
+				<title>Log In - Boş şifre alanı ile giriş denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro giriş sayfasında olmalıdır.
+Giriş sayfası düzgün şekilde yüklenmiş olmalıdır.
+İnternet bağlantısı aktif olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro giriş sayfası açılır.  
+
+</content><expected>Giriş sayfası düzgün şekilde yüklenmiş olmalıdır.
+
+</expected></step>
+<step>
+<content>E-mail alanına geçerli bir e-posta girilir, şifre alanı boş bırakılarak &quot;Log In Now&quot; butonuna tıklanır.	
+</content><expected>Şifre kutucuğu alanının altında &quot;Is Required&quot; mesajı goruntulenmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C191</id>
+				<title>Log In – &apos;@&apos; karakteri eksik e-posta ile girişi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro giriş sayfasına erişmiş olmalıdır.
+İnternet bağlantısı aktif olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro giriş sayfası açılır.	</content><expected>Giriş sayfası düzgün şekilde yüklenmiş olmalıdır.
+</expected></step>
+<step>
+<content>E-posta alanına geçersiz formatta (örneğin: testgmail.com) bir e-posta girilir. Şifre alanı geçerli bir şekilde doldurulur. &quot;Log In Now&quot; butonuna tıklanır.</content><expected>Tarayıcı kaynaklı olarak &quot;Lütfen e-posta adresine &apos;@&apos; işareti ekleyin&quot; şeklinde bir uyarı pop-up&apos;ı (native validation) gösterilmelidir.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C192</id>
+				<title>Log In – &apos;.&apos; karakteri eksik e-posta ile giriş</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro giriş sayfasına erişmiş olmalıdır.
+İnternet bağlantısı aktif olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro giriş sayfası açılır.	</content><expected>Giriş sayfası düzgün şekilde yüklenmiş olmalıdır.
+</expected></step>
+<step>
+<content>E-posta alanına geçersiz formatta (örneğin: test@gmailcom) bir e-posta girilir. Şifre alanı geçerli şekilde doldurulur. &quot;Log In Now&quot; butonuna tıklanır.	</content><expected>E-posta alanı altında &quot;Geçersiz formatta e-mail girdiniz&quot; şeklinde bir hata mesajı görünmelidir.
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C193</id>
+				<title>Registration – Boş alanlarla kayıt olma girişimi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, kayıt sayfasına erişmiş olmalıdır.
+Sayfa düzgün yüklenmiş ve internet bağlantısı aktif olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro ana sayfası açılır ve Registration bölümüne tıklanır.</content><expected>Kayıt (Register) formunun yer aldığı sayfa düzgün bir şekilde yüklenmelidir.
+</expected></step>
+<step>
+<content>E-posta, şifre ve kullanıcı adı alanları boş bırakılır.</content><expected>Her bir alanın altında “Is Required” uyarı mesajı görünmelidir. 
+</expected></step>
+<step>
+<content>“Register Now” butonuna tıklanır.	</content><expected>Her bir alanın altında “Is Required” uyarı mesajı görünmelidir. Kayıt işlemi gerçekleşmemelidir.
+</expected></step>
+<step>
+<content>“Register Now” butonunun görünürlüğü ve tıklanabilirliği kontrol edilir.	</content><expected>Buton görünür ve tıklanabilir olmalıdır ancak form gönderilmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C194</id>
+				<title>Registration - Daha önce kayıt olunan e-posta ile kayıt olma denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro ana sayfasında olmalı
+Kullanıcı sistemde giriş yapmamış olmalı
+Kayıt (Registration) sekmesi görünür olmalı</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfası açılır ve “Registration” bölümüne tıklanır.	</content><expected>Kayıt (Register) formunun yer aldığı sayfa düzgün şekilde yüklenmelidir.
+</expected></step>
+<step>
+<content>Kullanıcı adı ve şifre alanları geçerli şekilde doldurulur.	</content><expected>Alanlar aktif olmalıdır ve veri girişi yapılabilmelidir.
+</expected></step>
+<step>
+<content>E-posta alanına sistemde kayıtlı olan bir e-posta girilir (mevcut@gmail.com).	</content><expected>E-posta alanı aktif olmalıdır.
+</expected></step>
+<step>
+<content>“Register Now” butonuna tıklanır.	</content><expected>Kayıt işlemi gerçekleşmemelidir. “Email in use” şeklinde bir pop-up uyarı mesajı görünmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C195</id>
+				<title>Registration - Geçersiz e-posta formatları ile kayıt denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, kayıt sayfasına erişmiş olmalıdır.
+Sayfa düzgün yüklenmiş ve internet bağlantısı aktif olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfası açılır ve Registration bölümüne tıklanır.	</content><expected>Kayıt (Register) formunun yer aldığı sayfa düzgün şekilde yüklenmelidir.
+</expected></step>
+<step>
+<content>Kullanıcı adı ve şifre alanları uygun şekilde doldurulur.	</content><expected>Alanlar tıklanabilir ve veri girişi yapılabilir olmalıdır.
+</expected></step>
+<step>
+<content>E-posta alanına geçersiz bir formatta e-posta girilir (örneğin: test@gmailcom) ve “Register Now” butonuna tıklanır.</content><expected>&quot;Geçerli bir e-posta formatı olmalıdır” uyarı mesajı gösterilmelidir. Kayıt işlemi gerçekleşmemelidir.
+</expected></step>
+<step>
+<content>E-posta alanına geçersiz bir formatta e-posta girilir (örneğin: testgmail.com) ve “Register Now” butonuna tıklanır.</content><expected>&quot;Lütfen e-posta adresine bir @ işareti ekleyin.&quot; pop-up mesajı gösterilmelidir. Kayıt işlemi gerçekleşmemelidir.</expected></step>
+<step>
+<content>E-posta alanına geçersiz bir formatta e-posta girilir (örneğin: testgmailcom) ve “Register Now” butonuna tıklanır.</content><expected>E-posta alanı altında &quot;Geçerli bir e-posta formatı olmalıdır” uyarı mesajı gösterilmeli ve butona tıklandıgında &quot;Lütfen e-posta adresine bir @ işareti ekleyin.&quot; pop-up mesajı görünmelidir. Kayıt işlemi gerçekleşmemelidir.</expected></step>
+<step>
+<content>E-posta alanına geçersiz bir formatta e-posta girilir (örneğin: test@mai l.com / test@gmail,com / test@gmail!com) ve “Register Now” butonuna tıklanır.</content><expected>Uyarı mesajı olarak &quot;!&quot; (hangi karakter girildiyse) olmamalıdır şeklinde bir uyarı mesajı görünmelidir. Kayıt işlemi gerçekleşmemelidir.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C196</id>
+				<title>Registration – Name alanına 1 karakter girerek kayıt olma denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro giriş sayfasına ulaşmalıdır.
+&quot;Registration&quot; (Kayıt) sekmesi tıklanabilir ve kayıt formu düzgün şekilde görüntüleniyor olmalıdır.
+Kullanıcı sistemde giriş yapmamış olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfası açılır ve Registration bölümüne tıklanır.	</content><expected>Kayıt (Register) formunun yer aldığı sayfa düzgün şekilde yüklenmelidir.
+</expected></step>
+<step>
+<content>İsim alanına tek karakterlik bir ad girilir (örneğin: &quot;A&quot;).	</content><expected>İsim alanı aktif olmalıdır. Girilen tek karakter sonrası, alan altında “2 ila 32 karakter (dahil) arasında olmalıdır.” uyarı mesajı görünmelidir.
+</expected></step>
+<step>
+<content>Geçerli e-posta ve şifre girilir.	</content><expected>E-posta ve şifre alanları aktif olmalı ve geçerli değerler girilebilmelidir.
+</expected></step>
+<step>
+<content>“Register Now” butonuna tıklanır.	</content><expected>Kayıt işlemi gerçekleşmemeli ve form gönderilmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C197</id>
+				<title>Registration – Yetersiz uzunlukta şifre ile kayıt denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro giriş sayfasına ulaşmalı.
+Registration sekmesine tıklanmalı.
+Kullanıcı sistemde giriş yapmamış olmalı.</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfası açılır ve Registration bölümüne tıklanır.
+</content><expected>Kayıt sayfası düzgün şekilde yüklenmelidir.
+
+</expected></step>
+<step>
+<content>Geçerli e-posta ve kullanıcı adı girilir.
+</content><expected>Alanlar aktif olmalı, veri girişi yapılabilmelidir.
+
+</expected></step>
+<step>
+<content>Şifre alanına 8 karakterden az bir şifre (örn: &quot;Ab12#&quot;) girilir.
+</content><expected>Şifre alanı altında &quot;8 ile 64 karakter (dahil) arasında olmalıdır.&quot; uyarı mesajı görünmelidir.
+
+</expected></step>
+<step>
+<content>&quot;Register Now&quot; butonuna tıklanır.
+</content><expected>Form gönderilmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C198</id>
+				<title>Registration – Şifre alanına boşluk içeren metinle kayıt denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro giriş sayfasına ulaşmalı.
+Registration sekmesine tıklanmalı.
+Kullanıcı sistemde giriş yapmamış olmalı.</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfası açılır ve Registration bölümüne tıklanır.
+</content><expected>Kayıt sayfası düzgün şekilde yüklenmelidir.
+
+</expected></step>
+<step>
+<content>Geçerli e-posta ve kullanıcı adı girilir.
+</content><expected>Alanlar aktif olmalı, veri girişi yapılabilmelidir.
+
+</expected></step>
+<step>
+<content>Şifre alanına &quot;Test 1234&quot; gibi boşluk içeren bir metin girilir.
+</content><expected>Şifre alanı altında &quot;Şifre yalnızca Latin harfleri, sayıları ve sembolleri içermelidir.&quot; uyarısı görünmelidir.
+
+</expected></step>
+<step>
+<content>&quot;Register Now&quot; butonuna tıklanır.
+</content><expected>Form gönderilmemelidir.
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C199</id>
+				<title>Registration – Geçerli verilerle kayıt denemesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro ana sayfasında olmalı
+Kullanıcı sistemde giriş yapmamış olmalı
+Kayıt (Registration) sekmesi görünür olmalı</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfası açılır ve Registration bölümüne tıklanır.</content><expected>Kayıt formunun yer aldığı sayfa düzgün bir şekilde yüklenmelidir.
+
+</expected></step>
+<step>
+<content>Kullanıcı adı alanına geçerli bir ad girilir. (örnek: Zuhal)</content><expected>Kullanıcı adı alanı aktif olmalıdır ve girilen veri sistem tarafından kabul edilmelidir.</expected></step>
+<step>
+<content>Mail alanına geçerli bir mail adresi girilir. (örnek: zuhal.seker@gmail.com)</content><expected>Mail alanı aktif olmalı ve girilen veri geçerli formatta olmalıdır.</expected></step>
+<step>
+<content>Şifre alanına geçerli bir şifre girilir. (örnek: Test1234!)</content><expected>Şifre alanı aktif olmalı ve parola kurallarına uygun olmalıdır. (8-64 karakter, boşluk içermemeli, sembol içerebilir).
+
+</expected></step>
+<step>
+<content>“Register Now” butonuna tıklanır.</content><expected>Buton tıklanabilir olmalıdır. Kayıt işlemi başarılı bir şekilde gerçekleşmelidir. </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Header</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C200</id>
+				<title>Header alanında tema seçimi, kullanıcı bilgisi, uygulama adı/logosu ve hamburger menü ikonunun kontrolü</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı başarılı şekilde sisteme giriş yapmış olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sayfasına gir.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir.
+
+</expected></step>
+<step>
+<content>Login alanına tıkla, geçerli bilgilerle giriş yap.
+
+</content><expected>Kullanıcı başarılı bir şekilde giriş yapmalı ve ana sayfa görünmelidir.
+
+</expected></step>
+<step>
+<content>Header alanında bulunen &quot;Theme&quot; butonuna tıkla.
+
+</content><expected>Tema seçenekleri (Light, Violet, Dark) görünmelidir. Tema seçildiğinde, sayfanın teması değişmelidir. Kullanıcı tekrar giriş yaptığında, seçilen tema aktif olmalıdır.
+
+</expected></step>
+<step>
+<content>Header alanında kullanıcı avatarına tıkla.
+
+</content><expected>Avatar görünür olmalı, tıklanabilir olmalı. Tıklanınca &quot;Edit Profile&quot; modal penceresi açılmalıdır.
+
+</expected></step>
+<step>
+<content>Kullanıcı adını kontrol et.
+
+</content><expected>Kullanıcının adı avatarın sol yanında görünmelidir.
+
+</expected></step>
+<step>
+<content>Uygulamanın adını ve logosunu kontrol et.
+
+</content><expected>Desktop görünümde logo ve uygulama adı sol üst köşede görünür olmalıdır.
+
+</expected></step>
+<step>
+<content>Mobil ya da tablet moduna geç ve hamburger menü ikonuna tıkla.
+
+</content><expected>Hamburger menü görünür olmalı. Tıklandığında Sidebar (Yan Panel) açılmalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Edit Profile</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C201</id>
+				<title>Edit Profile penceresindeki alanların düzenlenmesi ve doğrulanması</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, geçerli bilgilerle giriş yapmış ve ana sayfaya yönlendirilmiş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine giriş yap.
+
+</content><expected>Sayfa düzgün şekilde yüklenmeli ve kullanıcı geçerli bilgilerle giriş yapmalıdır.
+
+</expected></step>
+<step>
+<content>Header alanında bulunan kullanıcı avatarına tıkla.
+
+</content><expected>“Edit Profile” modal penceresi açılmalıdır.
+
+</expected></step>
+<step>
+<content>Açılan Edit Profile modülünde + simgesine tıkla ve bir profil fotoğrafı seç.
+
+</content><expected>Fotoğraf seçildikten sonra kullanıcı avatarı güncellenmelidir.
+
+</expected></step>
+<step>
+<content>User Name alanındaki bilgiyi değiştir.
+
+</content><expected>Alan aktif olmalı, 2–32 karakter arası giriş kabul edilmelidir. 2 karakterden az veya 32 karakterden fazla girilirse uyarı gösterilmelidir.
+
+</expected></step>
+<step>
+<content>E-mail alanındaki bilgiyi değiştir.
+
+</content><expected>Alan aktif olmalı, e-posta formatı kontrol edilmelidir (örnek: test@mail.com). Geçersiz e-posta girilirse uygun hata mesajı görünmelidir.
+
+</expected></step>
+<step>
+<content>Şifre alanındaki bilgiyi değiştir.
+
+</content><expected>Alan aktif olmalı, şifre 8-64 karakter arasında olmalıdır. Şifre alanı boşsa uygun uyarı verilmelidir.
+
+</expected></step>
+<step>
+<content>Tüm alanlara geçerli veri girdikten sonra &quot;Send&quot; butonuna tıkla.
+
+</content><expected>Alanlar validasyon sonrası sunucuya istek gönderir. Değişiklikler başarıyla kaydedilmelidir.
+
+</expected></step>
+<step>
+<content>Formu tekrar aç ve değişikliklerin kaydedildiğini doğrula.
+
+</content><expected>Yeni girilen kullanıcı adı, e-posta, profil fotoğrafı görünmelidir.
+
+</expected></step>
+<step>
+<content>Formu aç ve &quot;X&quot; butonuna tıkla.
+
+</content><expected>Form kapatılmalı, değişiklik yapıldıysa kaydedilmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>SideBar</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C202</id>
+				<title>Sidebar içeriğinin görünümü ve işlevselliği</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgileri ile sisteme giriş yapmış olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine giriş yap ve kullanıcı bilgileri ile oturum aç.
+
+</content><expected>Uygulamaya giriş yapıldıktan sonra sidebar görünür olmalıdır.
+
+</expected></step>
+<step>
+<content>Sidebar’da uygulamanın logosu tıklanır ve görünür olmalıdır.
+
+</content><expected>Logoya tıklandığında ana sayfaya veya kullanıcıya ait ilk board&apos;a yönlendirilmelidir.
+
+</expected></step>
+<step>
+<content>Sidebar’da &quot;Create New Board&quot; butonu bulunmalıdır.
+
+</content><expected>Buton tıklanabilir olmalıdır.
+
+</expected></step>
+<step>
+<content>Sidebar’da mevcut boardların listesi görünmelidir.
+
+</content><expected>Her board için tahta simgesi, tahta adı ve düzenleme/silme simgeleri görünmeli ve simgeler tıklanabilir olmalıdır.
+
+</expected></step>
+<step>
+<content>Sidebar’da &quot;Need Help&quot; bloğu görünmeli ve tıklanabilir olmalıdır.
+
+</content><expected>Tıklandıgında yardım formu açılmalıdır.
+
+</expected></step>
+<step>
+<content>Sidebar’da &quot;Log Out&quot; butonu görünmeli ve tıklanabilir olmalıdır.
+
+</content><expected>Tıklandıgında kullanıcı çıkış yapabilmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C203</id>
+				<title>Board oluşturma işlevselliği</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle TaskPro sitesine giriş yapmış olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine giriş yap ve kullanıcı bilgileri ile oturum aç.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmeli ve kullanıcı giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>SideBar alanında bulunan &quot;Create a New Board&quot; butonuna tıkla.
+
+</content><expected>Buton tıklanabilir olmalı ve &quot;New Board&quot; modal penceresi açılmalıdır.
+
+</expected></step>
+<step>
+<content>Title alanına geçerli bir başlık (örneğin: &quot;Test Board&quot;) gir.
+
+</content><expected>Title alanı aktif olmalıdır.
+
+</expected></step>
+<step>
+<content>Title alanına yetersiz minimum uzunlukta bir başlık (örneğin: &quot;A&quot;) gir.
+
+</content><expected>Title alanı aktif olmalıdır. Yetersiz karakterde başlık girildiğinde &quot;en az 3 karakter olmalıdır&quot; bilgisi görünmelidir.
+
+</expected></step>
+<step>
+<content>Title alanına yetersiz maksimum uzunlukta bir başlık (örneğin: &quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&quot;) gir.
+
+</content><expected>Title alanı aktif olmalıdır. Yetersiz karakterde başlık girildiğinde &quot;en az 32 karakter olmalıdır&quot; bilgisi görünmelidir.
+
+</expected></step>
+<step>
+<content>Title alanını boş bırakın.
+
+</content><expected>Title alanı aktif olmalıdır. Alan boş bırakıldığında &quot;Doldurulması zorunludur&quot; uyarısı görünmelidir.
+
+</expected></step>
+<step>
+<content>Board için bir ikon seç.
+
+</content><expected>İkonlar tıklanabilir olmalı. İkon seçilmediğinde: Otomatik olarak ilk ikon seçili olmalıdır.
+
+</expected></step>
+<step>
+<content>Board için bir arka plan seç.
+
+</content><expected>Background seçenekleri tıklanabilir olmalı. Seçim yapılmadığında: Otomatik olarak &quot;arka plansız&quot; seçeneği aktif olmalıdır.
+
+</expected></step>
+<step>
+<content>Create butonuna tıkla.
+
+</content><expected>Buton tıklanabilir olmalıdır ve tıklandıktan sonra yeni bir board başarıyla oluşturulmalı ve SideBar&apos;da listelenmelidir.
+
+</expected></step>
+<step>
+<content>Pencereyi kapatmak için X butonuna tıkla.
+
+</content><expected>Modal pencere veriler kaydedilmeden kapanmalıdır.
+
+</expected></step>
+<step>
+<content>Yeni oluşturulan board üzerinde kontrol yap.
+
+</content><expected>Board, SideBar&apos;da listelenmeli ve düzenleme/silme simgeleri görünmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C204</id>
+				<title>Board düzenleme işlevselliği</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, TaskPro uygulamasında geçerli kullanıcı adı ve şifresiyle giriş yapmış olmalıdır.
+Kullanıcının en az bir board (tahta) oluşturmuş olması gerekmektedir.
+Kullanıcının düzenlemek istediği board, sidebar üzerinde görünür olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>SideBar alanında oluşturulmuş board üstüne gel ve Edit simgesine tıkla.
+
+</content><expected>Edit simgesi görünür ve tıklanabilir olmalı ve edit board modal penceresi açılmalıdır.
+
+</expected></step>
+<step>
+<content>Edit board penceresinde title alanında değişiklik yap.
+
+</content><expected>Title alanı aktif ve düzenlenebilir olmalıdır. Karakter sayısından az ya da çok giriş yapıldıgında &quot;Başlık en az 3 ve en fazla 32 karakter olmalıdır.&quot; uyarısı görünmelidir. Title alanı boş bırakıldığında &quot;Doldurulması zorunludur.&quot; uyarısı görünmelidir.
+
+</expected></step>
+<step>
+<content>Edit board penceresinde icon için değişiklik yap.
+
+</content><expected>Iconlar tıklanabilir olmalıdır. Icon seçimi zorunlu olmamalıdır. Icon seçilmediği takdirde, otomatik olarak ilk icon seçili olmalıdır.
+
+</expected></step>
+<step>
+<content>Edit board penceresinde background (arka plan) için değişiklik yap.
+
+</content><expected>Background seçenekleri görünür ve tıklanabilir olmalıdır. Background seçimi zorunlu olmamalıdır. Background seçilmediği takdirde otomatik olarak &quot;Arka plansız&quot; seçeneği kalmalıdır.
+
+</expected></step>
+<step>
+<content>Edit butonuna tıkla.
+
+</content><expected>Yapılan değişiklikler (title, icon ve background) kaydedilmelidir. Kullanıcı düzenlenmiş board&apos;u sidebar ve ana ekranda görmelidir.
+
+</expected></step>
+<step>
+<content>x (close) butonuna tıkla.
+
+</content><expected>Edit board penceresi kapanmalı ve yapılan değişiklikler kaydedilmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C205</id>
+				<title>Board silme işlevselliği</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, TaskPro uygulamasında geçerli kullanıcı adı ve şifresiyle giriş yapmış olmalıdır.
+Kullanıcının en az bir board (tahta) oluşturmuş olması gerekmektedir.
+Kullanıcının silmek istediği board, sidebar üzerinde görünür olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>SideBar alanında oluşturulmuş board ustune gel ve silme simgesine tıkla.
+
+</content><expected>Silme simgesi görünür ve tıklanabilir olmalıdır. Tıklandıgında board silinmelidir. Silinen board, sidebar ve ana sayfada görünmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C206</id>
+				<title>Need Help? formunun doldurulması ve mesaj gönderilmesi işlemlerinin test edilmesi</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro uygulamasına geçerli bilgilerle giriş yapmış olmalıdır.
+&quot;Need Help?&quot; butonu sidebar&apos;da görünür ve tıklanabilir olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Kullanıcı başarılı bir şekilde giriş yapmalı ve ana sayfa görünmelidir.
+
+</expected></step>
+<step>
+<content>Sidebar alanında bulunan &quot;Need Help?&quot; butonuna tıkla.
+
+</content><expected>Yardım formu içeren bir modal pencere açılmalıdır.
+
+</expected></step>
+<step>
+<content>Yardım formundaki e-mail alanına bir e-posta adresi gir.
+
+</content><expected>E-mail alanı aktif olmalı, doldurulması zorunlu olmalı ve doğru formatta e-posta girildiğinde sistem kabul etmelidir.
+
+</expected></step>
+<step>
+<content>Mesaj alanına 10-200 karakter arasında bir mesaj gir.  
+
+</content><expected>Mesaj alanı aktif olmalı, doldurulması zorunlu olmalı ve karakter sınırına uygun mesaj girildiğinde sistem kabul etmelidir.
+
+</expected></step>
+<step>
+<content>&quot;Send&quot; butonuna tıkla.
+
+</content><expected>Alanlar doğru doldurulmuşsa mesaj gönderilmelidir. Alanlardan biri boşsa, &quot;Zorunlu alan&quot; uyarı mesajı görünmelidir.
+
+</expected></step>
+<step>
+<content>Yardım formundaki &quot;X&quot; butonuna tıkla.
+
+</content><expected>Form, herhangi bir işlem kaydedilmeden kapanmalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C207</id>
+				<title>Log Out butonuna tıklanarak oturumun sonlandırılması</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle TaskPro sistemine giriş yapmış olmalıdır.
+Ana sayfa düzgün şekilde yüklenmiş olmalıdır.
+SideBar alanında Logout butonu görünür olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.</expected></step>
+<step>
+<content>Sidebar alanında, sol alt köşede bulunan &quot;Log Out&quot; butonuna tıkla.
+
+</content><expected>Kullanıcının oturumu sonlanmalı, sistemden çıkış yapılmalı ve kullanıcı yetkisiz duruma düşmelidir. Başlangıç sayfasına yönlendirme olmalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Anasayfa</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C208</id>
+				<title>Add Column butonuyla yeni sütun oluşturma</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle giriş yapmış ve bir board oluşturulmuş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün şekilde yüklenmeli. Geçerli bilgilerle giriş yapıldığında kullanıcı ana sayfaya yönlendirilmelidir.
+
+</expected></step>
+<step>
+<content>Oluşturulmuş board&apos;da bulunan &quot;Add another column&quot; butonuna tıklanır.
+
+</content><expected>Buton görünür ve tıklanabilir olmalıdır. Tıklandığında bir modal pencere açılmalıdır.
+
+</expected></step>
+<step>
+<content>Açılan modal pencerede title alanına en fazla 32 karakter olacak şekilde veri gir.
+
+</content><expected>Başlık alanı aktif olmalı ve veri girilebilmelidir. 32 karakterden fazla veri girildiğinde &quot;en fazla 32 karakter girilmelidir.&quot; uyarısı verilmelidir.
+
+</expected></step>
+<step>
+<content>&quot;Add&quot; butonuna tıkla.
+
+</content><expected>Buton tıklanabilir olmalıdır. Girilen başlıkla yeni bir sütun oluşturulmalı, eklenen sütun sayfada görünmelidir. “Add another column” butonu bir sütun sağa kaymalıdır.
+
+</expected></step>
+<step>
+<content>Modal pencere açıkken “title” alanı boş bırakılıp “Add” butonuna tıkla.
+
+</content><expected>Buton tıklanabilir olsa da boş başlıkla sütun oluşturulmamalıdır. Kullanıcıya &quot;Is Required&quot; uyarı mesajı gösterilmelidir.
+
+</expected></step>
+<step>
+<content>Modal pencerenin sağ üst köşesindeki “x” butonuna tıkla.
+
+</content><expected>Buton görünür ve tıklanabilir olmalıdır. Tıklandığında modal pencere kapatılmalı ve girilen veriler kaydedilmemelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C209</id>
+				<title>Edit column butonu işlevselliği</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı giriş yapmış ve en az bir column oluşturulmuş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı başarılı şekilde ana sayfaya yönlendirilmelidir.
+
+</expected></step>
+<step>
+<content>Herhangi bir column üzerinde bulunan “Edit Column” butonuna tıkla.
+
+</content><expected>Edit Column modal penceresi açılmalıdır. Modal pencerede başlık alanı, mevcut başlık bilgisiyle doldurulmuş şekilde görünmelidir.
+
+</expected></step>
+<step>
+<content>Başlık alanını değiştir ve &quot;Add&quot; butonuna tıkla.
+
+</content><expected>Column başlığı güncellenir ve sayfada yeni başlık görünür. Title alanı boş ise &quot;Is Required&quot; uyarı mesajı görünmelidir.
+
+</expected></step>
+<step>
+<content>X(close) butonuna tıkla.
+
+</content><expected>Modal pencere, yapılan değişiklikler kaydedilmeden kapanmalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C210</id>
+				<title>Delete column butonu işlevselliği</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı giriş yapmış ve en az bir column oluşturulmuş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı başarılı şekilde ana sayfaya yönlendirilmelidir.
+
+</expected></step>
+<step>
+<content>Herhangi bir column üzerinde bulunan “Delete Column” (çöp kutusu simgesi) butonuna tıkla.
+
+</content><expected>Buton görünür ve tıklanabilir olmalıdır.
+
+</expected></step>
+<step>
+<content>Karşına bir onay modalı çıkarsa, burada “Evet” ya da “Hayır” butonuna tıkla.
+
+</content><expected>Modal doğru şekilde açılmalı. “Hayır” butonuna basıldığında sütun silinmemelidir. “Evet” butonuna tıklandığında sütun kalıcı olarak silinmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C211</id>
+				<title>Filters butonunun ve filtreleme fonksiyonlarının kontrolü</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle giriş yapmış ve ana sayfaya ulaşmış olmalıdır.
+En az bir column ve bir card oluşturulmuş olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>Ana sayfada bulunan &quot;Filters&quot; butonuna tıkla.
+
+</content><expected>Buton görünür ve tıklanabilir olmalıdır. Tıklandığında filtreleme modal penceresi açılmalıdır.
+
+</expected></step>
+<step>
+<content>Açılan modal pencerede “background” seçeneklerinden birini seç.
+
+</content><expected>“Background yok” dahil olmak üzere arka plan seçenekleri listelenmiş olmalıdır. Seçilen background’a göre pano arka planı anlık olarak değişmelidir.
+
+</expected></step>
+<step>
+<content>Görev önceliği listesinden bir seçenek seç (low, medium, high, without).
+
+</content><expected>Görev öncelikleri listesi her biri alt alta sıralı bir şekilde görünür ve tıklanır olmalıdır. Low mavi renk, medium kırmızı renk, high yeşil renk, without gri renk görünmelidir. Seçilen öncelik aktif hale gelmeli (daire dolmalı) ve kartlar yalnızca bu önceliğe göre filtrelenmelidir.
+
+</expected></step>
+<step>
+<content>&quot;Show all&quot; butonuna tıkla.
+
+</content><expected>Tıklandıgında öncelik filtrelemesi kaldırılmalıdır, tüm görev kartları tekrar görünür hale gelmelidir.
+
+</expected></step>
+<step>
+<content>Modal pencerenin sağ üst köşesindeki “x” butonuna tıkla.
+
+</content><expected>Buton görünür olmalı ve tıklanabilir olmalıdır. Tıklandığında modal pencere kapanmalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C212</id>
+				<title>Ana sayfada yatay ve dikey kaydırma işlemlerinin doğru çalıştığının kontrolü</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle TaskPro sistemine giriş yapmıştır.
+Kullanıcının eriştiği ana sayfada birden fazla sütun (column) mevcuttur.
+Her sütunun içerisinde birden fazla görev (card) bulunmalıdır.</preconds>
+											<steps_separated><step>
+<content>Kullanıcı geçerli bilgilerle sisteme giriş yapar.	</content><expected>Ana sayfa yüklenmeli ve kullanıcı sütunları görebilmelidir.
+</expected></step>
+<step>
+<content>Ekranda birden fazla sütun olacak şekilde sağa doğru yatay kaydırma yapılır.	</content><expected>Yatay scroll bar görünmelidir. Kullanıcı sağa kaydırdıkça diğer sütunlar da görünmelidir.
+</expected></step>
+<step>
+<content>Yatay kaydırma yapılırken, Header ve Sidebar öğeleri incelenir.	</content><expected>Header (üst menü) ve Sidebar (sol menü) sabit kalmalı, kaydırma sırasında hareket etmemelidir.
+</expected></step>
+<step>
+<content>Herhangi bir sütunda çok sayıda görev kartı olacak şekilde aşağıya doğru kaydırma yapılır.	</content><expected>Her sütun kendi içinde dikey scroll bar’a sahip olmalı ve yalnızca o sütunda scroll yapılmalıdır. Diğer sütunlar sabit kalmalıdır.
+</expected></step>
+<step>
+<content>Farklı sütunlarda aşağıya kaydırma yapılırken ana sayfa genel düzeni kontrol edilir.	</content><expected>Sayfanın bütünsel düzeni bozulmamalı, sadece ilgili sütun içinde dikey kaydırma gerçekleşmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Görev ekleme/düzenleme formu</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C213</id>
+				<title>Görev kartı ekleme işlevselliği (Add card)</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle TaskPro sitesine giriş yapmış olmalıdır.
+En az bir sütun (column) oluşturulmuş olmalıdır.</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>Oluşturulmuş column içerisinde &quot;Add card&quot; butonuna tıklanır.
+
+</content><expected>Görev ekleme/düzenleme modal penceresi açılmalıdır.
+
+</expected></step>
+<step>
+<content>Açılan modal pencerede Title alanına metin girilir.
+
+</content><expected>Girilen başlık metni formda görünmelidir. Boş bırakılırsa: &quot;Bu alan boş bırakılamaz.&quot; hatası gösterilmelidir.
+
+</expected></step>
+<step>
+<content>Description alanına açıklama girilir.  
+
+</content><expected>Girilen açıklama metni formda görünmelidir. Boş bırakılırsa: &quot;Bu alan boş bırakılamaz.&quot; hatası gösterilmelidir. Karakter Sınırı: 5-1000 karakter arasında olmalıdır.
+
+</expected></step>
+<step>
+<content>Görev önceliği olarak &quot;Low&quot; seçilir.    
+
+</content><expected>Öncelik simgesi mavi renkte görünür.
+
+</expected></step>
+<step>
+<content>Görev önceliği olarak &quot;Medium&quot; seçilir.
+
+</content><expected>Öncelik simgesi kırmızı renkte görünür.
+
+</expected></step>
+<step>
+<content>Görev önceliği olarak &quot;High&quot; seçilir.  
+
+</content><expected>Görev önceliği olarak &quot;High&quot; seçilir.  
+
+</expected></step>
+<step>
+<content>Görev önceliği olarak &quot;Without&quot; seçilir.    
+
+</content><expected>Öncelik simgesi gri renkte görünür. (Varsayılan)
+
+</expected></step>
+<step>
+<content>Takvimden bugünün tarihi seçilir.
+
+</content><expected>Tarih başarıyla formda gösterilir. Card oluşturduktan sonra bugünün tarihi olduğu için görev kartının üstünde zil ikonu görünmelidir.
+</expected></step>
+<step>
+<content>Takvimde ileri bir tarih seçilir.
+
+</content><expected>Görev sütuna başarıyla eklenir. Kart eklendikten sonra zil ikonu ilk başta görünmemelidir.
+Ancak tarih geldiği gün sistem zil ikonunu gösterecek şekilde çalışmalıdır. (manuel olarak o gün test edilebilir)
+</expected></step>
+<step>
+<content>Takvimden geçmiş tarih seçilmeye çalışılır.
+
+</content><expected>Oluşturulan günden önceki tarihler pasif durumda olmalıdır.
+
+</expected></step>
+<step>
+<content>&quot;Add&quot; butonuna tıklanır (yeni görev oluşturma).
+
+</content><expected>Görev başarıyla oluşturulur ve sütuna eklenir.
+
+</expected></step>
+<step>
+<content>x (close) butonuna tıklanır.
+
+</content><expected>Bilgiler kaydedilmeden modal pencereden çıkış yapılır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C214</id>
+				<title>Görev kartı düzenleme işlevselliği (Edit card)</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle TaskPro sitesine giriş yapmış olmalıdır.
+En az bir sütun (column) oluşturulmuş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>Oluşturulmuş card üzerinde bulunan kalem simgesine (edit card) tıkla.
+
+</content><expected>Buton tıklanabilir olmalı ve edit modal pencere açılmalıdır.
+
+</expected></step>
+<step>
+<content>&quot;Title&quot; alanı değiştirilir.
+
+</content><expected>Girilen başlık metni formda görünmelidir. Boş bırakılırsa: &quot;Is Required&quot; uyarı mesajı gösterilmelidir.
+
+</expected></step>
+<step>
+<content>&quot;Description&quot; alanı değiştirilir.
+
+</content><expected>Girilen açıklama metni formda görünmelidir. Boş bırakılırsa: &quot;Is Required&quot; uyarı mesajı gösterilmelidir. Metin 5-1000 karakter arasında olmalıdır.
+
+</expected></step>
+<step>
+<content>Görev önceliği değiştirilir.
+
+</content><expected>Görev önceliği (low, medium, high, without) yeni seçilen öncelikle değiştirilir.
+
+</expected></step>
+<step>
+<content>Görev tarihini değiştir.
+
+</content><expected>Yeni tarih başarıyla seçilmeli ve görünmelidir. Geçmiş tarihler pasif olmalıdır.
+
+</expected></step>
+<step>
+<content>&quot;Edit&quot; butonuna tıklanır.
+
+</content><expected>Yapılan değişiklikler kaydedilir ve cardda yeni bilgiler görünür.
+
+</expected></step>
+<step>
+<content>x (close) butonuna tıklanır.
+
+</content><expected>Yeni bilgiler kaydedilmeden modal pencereden çıkış yapılır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C215</id>
+				<title>Görev kartı silme işlevselliği (Delete card)</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı geçerli bilgilerle giriş yapmış olmalı.
+En az bir board ve bu board içinde bir sütun oluşturulmuş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine gir ve geçerli bilgilerle giriş yap.
+
+</content><expected>Sayfa düzgün bir şekilde yüklenmelidir ve kullanıcı geçerli bilgilerle siteye giriş yapmış olmalıdır.
+
+</expected></step>
+<step>
+<content>Board içinde bir column oluşturulur ve Add card ile yeni bir görev eklenir.
+
+</content><expected>Görev başarıyla sütuna eklenmelidir.
+
+</expected></step>
+<step>
+<content>Kart üzerindeki &quot;Sil&quot; (çöp kutusu) ikonuna tıkla.
+
+</content><expected>Görev kartı anında silinmelidir.
+
+</expected></step>
+<step>
+<content>Son kalan kart silindiğinde, sütun boş olarak görünmelidir.
+
+</content><expected>&quot;Add another card&quot; butonu hala görünmelidir.
+
+</expected></step>
+<step>
+<content>Aynı işlemler birden fazla kart üzerinde tekrarlanır.  
+
+</content><expected>Her bir kart için ayrı ayrı silme işlemi sorunsuz gerçekleşmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C216</id>
+				<title>Görev kartı taşıma işlevselliği (Move card)</title>
+												<template>Test Case (Steps)</template>
+																<type>Functional</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro sistemine geçerli bilgilerle giriş yapmış olmalıdır.
+Kullanıcının oluşturduğu bir board içinde en az 2 sütun bulunmalıdır.
+En az bir sütunda taşınabilir bir görev kartı mevcut olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine giriş yap.
+
+</content><expected>Sayfa düzgün yüklenmeli ve kullanıcı başarılı şekilde giriş yapmalıdır.
+
+</expected></step>
+<step>
+<content>En az iki sütun (column) oluştur.
+
+</content><expected>Sütunlar doğru şekilde görünmelidir.
+
+</expected></step>
+<step>
+<content>İlk sütuna bir görev kartı ekle.
+
+</content><expected>Kart sütunda görüntülenmelidir.
+
+</expected></step>
+<step>
+<content>Görev kartı üzerinde yer alan &quot;Ok&quot; ikonuna (grup değiştirme) tıkla.
+
+</content><expected>Açılır menü görünmeli ve kartın şu anda bulunduğu sütun hariç diğer tüm sütunlar listelenmelidir.
+
+</expected></step>
+<step>
+<content>Kartı başka bir sütuna taşı.
+
+</content><expected>Seçilen sütuna kart anında taşınmalı ve önceki sütundan kaldırılmalıdır.
+
+</expected></step>
+<step>
+<content>Kartın taşındığı yeni sütunda görüntülendiğini doğrula.
+
+</content><expected>Kart bilgileri aynı kalmalı, yalnızca bulunduğu sütun değişmiş olmalı.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C217</id>
+				<title>Görev kartlarında UI tutarlılığı ve içerik görünürlüğü</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro sistemine giriş yapabilmeli.
+En az bir proje oluşturulmuş ve içinde en az bir sütun (column) mevcut olmalı.
+Daha önce oluşturulmuş görev kartı yoksa, test sırasında manuel olarak en az 3 farklı uzunlukta açıklamaya sahip görev kartı eklenmeli.
+
+</preconds>
+											<steps_separated><step>
+<content>TaskPro sitesine geçerli kullanıcı bilgileriyle giriş yapılır.
+</content><expected>Kullanıcı başarıyla giriş yapar ve görev panosu görüntülenir.
+
+
+</expected></step>
+<step>
+<content>Aynı sütun altında farklı uzunluklarda açıklamalara sahip 3 farklı görev kartı oluşturulur.
+</content><expected>Kartlar başarıyla oluşturulur ve aynı sütun altında görünür.
+
+</expected></step>
+<step>
+<content>Kartların görsel yüksekliği karşılaştırılır.
+</content><expected>Tüm görev kartlarının yüksekliği sabit olmalıdır. İçerik uzunluğuna bağlı olarak kart boyutu değişmemelidir.
+
+</expected></step>
+<step>
+<content>Uzun açıklamaya sahip kartta, metnin sonuna ... (üç nokta) eklendiği gözlemlenir.
+</content><expected>Açıklama metni gerektiğinde ... ile sonlandırılabilir.</expected></step>
+<step>
+<content>Kartlar üst üste incelenir ve hizalanmaları karşılaştırılır.
+</content><expected>Kartların başlık, açıklama, öncelik simgesi, tarih ve ikonlarının hizaları tüm kartlarda aynı hizada ve düzenli görünmelidir.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>UI görünümler</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C218</id>
+				<title>Mobil | (320px-375px): Anasayfa Başlangıç Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>TaskPro web sayfası yayında olmalı.
+Kullanıcı giriş yapmamış olmalı (ana sayfa görünür).</preconds>
+											<steps_separated><step>
+<content>Tarayıcıda TaskPro ana sayfası açılır ve Chrome DevTools etkinleştirilir.
+</content><expected>TaskPro sayfası başarılı şekilde yüklenmelidir. Sayfa içeriği görünür ve işlevsel olmalıdır.
+</expected></step>
+<step>
+<content>Viewport genişliği 320px’e ayarlanır.
+
+</content><expected>Sayfa, öğeleri dar alana göre yeniden hizalamalıdır. Öğeler üst üste binmemeli veya taşmamalıdır.
+</expected></step>
+<step>
+<content>Ana sayfada bulunan logo, slogan, &quot;Register&quot; ve &quot;Login&quot; butonları kontrol edilir.
+
+</content><expected>Logo üstte ortalanmış olmalı. Slogan düzgün biçimde logonun altında görünmeli. Butonlar alt alta ve ekran genişliğine uygun hizalanmış olmalıdır.
+
+
+</expected></step>
+<step>
+<content>Viewport genişliği yavaş yavaş 375px&apos;e kadar genişletilir.
+</content><expected>Tüm öğeler genişlik değişimine sorunsuz uyum sağlamalı, herhangi bir kayma ya da taşma olmamalıdır.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C219</id>
+				<title>Mobil | (375px-768px): Anasayfa Başlangıç Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>TaskPro web sayfası yayında olmalı.
+Kullanıcı giriş yapmamış olmalı (ana sayfa görünür).</preconds>
+											<steps_separated><step>
+<content>Tarayıcıda TaskPro ana sayfası ve Chrome DevTools açılır.
+</content><expected>Uygulama sayfası düzgün şekilde yüklenmelidir. DevTools açık olmalı ve cihaz çubuğundan özel genişlik ayarı yapılabilmelidir.
+
+</expected></step>
+<step>
+<content>Viewport genişliği 375px olarak ayarlanır.</content><expected>Öğeler 375px&apos;e uygun hizalanmalı, düzen bozulmadan kullanıcı arayüzü mobil uyumlu görünmelidir.</expected></step>
+<step>
+<content>Genişlik değeri yavaş yavaş 768px&apos;e kadar artırılır.</content><expected>Tüm öğeler (logo, açıklama metni, butonlar) genişliğe göre esnek şekilde büyümelidir. Ekran taşması ya da kayma olmamalıdır.</expected></step>
+<step>
+<content>Her genişlik değişiminde &quot;Register&quot; ve &quot;Log In&quot; butonlarının konumu ve görünürlüğü incelenir.</content><expected>Her iki buton da görünür olmalı ve hizalamaları düzgün olmalıdır.
+Hiçbir öğe üst üste binmemeli veya ekran dışına taşmamalıdır.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C220</id>
+				<title>Mobil | (320px-375px): Registration Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, tarayıcıdan TaskPro uygulamasına erişebiliyor olmalıdır.
+Başlangıç sayfası yüklendikten sonra &quot;Register&quot; butonuna tıklanarak kayıt sayfasına yönlendirilmiş olunmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 320px olarak ayarlanır.</content><expected>Sayfa, mobil cihaz görünümüne uygun şekilde görüntülenmelidir.
+Form alanları ekran içinde hizalanmalı ve taşma olmamalıdır.</expected></step>
+<step>
+<content>Ad, Soyad, E-mail, Şifre ve Şifre Tekrar alanlarının görünürlüğü kontrol edilir.</content><expected>Tüm form alanları ekrana sığmalı, kullanıcı giriş yapabilmelidir.
+Label (etiket) ve input alanları hizalı olmalıdır.
+
+</expected></step>
+<step>
+<content>Genişlik yavaş yavaş 375px&apos;e kadar artırılır.</content><expected>Tüm bileşenler genişliğe göre orantılı büyümeli, herhangi bir UI bozulması yaşanmamalıdır.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C221</id>
+				<title>Mobil | (375px-768px): Registration Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, tarayıcıda TaskPro uygulamasına erişim sağlamalıdır.
+Ana sayfadan &quot;Register&quot; butonuna tıklanarak kayıt (registration) sayfasına yönlendirilmiş olmalıdır.</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 375px olarak ayarlanır.</content><expected>Sayfa mobil uyumlu şekilde görünür. Form elemanları ekranı taşmaz, hizalamada bozulma olmaz.</expected></step>
+<step>
+<content>Ad, Soyad, E-mail, Şifre ve Şifre Tekrar input alanlarının konumu, hizalaması ve aralarındaki boşluklar incelenir.</content><expected>Tüm alanlar düzenli biçimde alt alta sıralanmalı, eşit boşluklarla hizalanmalı ve metin kutuları görünür olmalıdır.</expected></step>
+<step>
+<content>Ekran genişliği kademeli olarak 768px&apos;e kadar artırılır. </content><expected>Her adımda form öğeleri genişliğe uyum sağlamalı, ekran boyutuna göre büyümeli ve kayma/bozulma olmamalıdır.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C222</id>
+				<title>Mobil | (320px-375px): Login Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı tarayıcıda TaskPro uygulamasına erişir.
+Ana sayfada yer alan Log In (Giriş) butonuna tıklanarak giriş sayfasına yönlendirilmiş olmalıdır.</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 320px olarak ayarlanır.</content><expected>Sayfa mobil uyumlu görünmelidir. Hiçbir içerik ekran dışına taşmamalı, yatay kaydırma olmamalıdır.</expected></step>
+<step>
+<content>E-posta ve şifre alanlarının hizalaması ve ekran yerleşimi incelenir.</content><expected>Input alanları alt alta düzgün biçimde sıralanmalı, simetrik boşluklar olmalıdır.</expected></step>
+<step>
+<content>Ekran genişliği 375px’e kadar kademeli artırılır.</content><expected>Form elemanları ekranla orantılı genişlemeli; görünümde kayma ya da hizalama sorunu olmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C223</id>
+				<title>Mobil | (375px-768px): Login Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı TaskPro uygulamasında, ana sayfadaki Log In butonuna tıklayarak giriş sayfasına yönlendirilmiş olmalıdır.</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 375px olarak ayarlanır.</content><expected>Sayfa öğeleri ekranla orantılı şekilde hizalanır. Taşma veya kırılma olmamalıdır.
+
+</expected></step>
+<step>
+<content>Giriş formundaki input alanları (e-posta ve şifre) kontrol edilir.</content><expected>Input alanları tam görünür olmalı ve mobil uyumlu boşluklarla konumlandırılmış olmalıdır.</expected></step>
+<step>
+<content>Ekran genişliği 768px&apos;e kadar kademeli olarak artırılır.</content><expected>Tüm bileşenler ekranla birlikte esnek şekilde büyümelidir. Görsel ya da yapısal bozulmalar olmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C224</id>
+				<title>Mobil | (320px-375px-768px): Giriş Sonrası (Task Board) UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı sisteme giriş yapmış olmalıdır.
+Task Board sayfası açık olmalıdır.
+Test, mobil görünümde 320px ile başlayarak 768px’e kadar genişletilerek yapılmalıdır.</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 320px olarak ayarlanır.
+</content><expected>Sayfa mobil uyumlu görünmelidir. Yatay kaydırma olmamalı, içerikler ekran sınırları içinde kalmalıdır.</expected></step>
+<step>
+<content>“Theme” seçeneği bulunur ve tıklanır.	</content><expected>Tema (ör. Light/Dark) değişmelidir. Tema değiştikten sonra mobil uyumluluk bozulmamalıdır. Yazıların okunabilirliği, butonların görünürlüğü ve bileşenlerin hizalanması doğru şekilde devam etmelidir.
+</expected></step>
+<step>
+<content>Sol üstteki hamburger menüye tıklanır.	</content><expected>Menü açılmalı; “Task Pro”, “My Boards”, “Create a new board”, “Log out” ve “Need Help?” seçenekleri düzgün hizalanmış ve görünür olmalıdır.</expected></step>
+<step>
+<content>“Create a new board” seçeneğine tıklanır.</content><expected>Giriş alanları (ör. Board Name, Visibility vb.) mobil ekranda düzgün hizalanmalı ve taşma olmamalıdır. Giriş alanları dokunulabilir ve çalışır durumda olmalıdır. “Create” ve “Cancel” butonları görünür ve erişilebilir olmalıdır. Klavye açıldığında ekran kaymamalı ve input alanları görünürlüğünü kaybetmemelidir.</expected></step>
+<step>
+<content>Sayfanın alt kısmında “Need Help?” butonu kontrol edilir ve tıklanır.</content><expected>Buton görünür olmalı ve ekran sınırları içinde kalmalıdır.
+Buton metni okunabilir olmalı, kırpılma olmamalıdır.
+Yardım modal penceresi (popup) ekranın ortasında açılmalıdır.
+Modal pencere ekranı taşmamalıdır, dikey olarak kaydırma gerekiyorsa düzgün çalışmalıdır.
+</expected></step>
+<step>
+<content>Logout butonu kontrol edilir.</content><expected>Buton görünür olmalı ve ekran sınırları içinde kalmalıdır.
+Buton metni okunabilir olmalı, kırpılma olmamalıdır.
+</expected></step>
+<step>
+<content>“Add another column” butonu kontrol edilir.	</content><expected> Buton düzgün görünmeli, tıklanabilir ve işlevsel olmalıdır.
+</expected></step>
+<step>
+<content>Kartların içeriği incelenir (To Do / In Progress / Done).	</content><expected>Kartlar hizalanmış olmalı; içerik kutulardan taşmamalı, metinler kırpılmadan okunabilmelidir.
+</expected></step>
+<step>
+<content>Sağ üstteki kullanıcı ikonuna tıklanır.	</content><expected>“Edit Profile” popup’ı düzgün açılmalı, tüm input alanları görünür ve erişilebilir olmalıdır.
+</expected></step>
+<step>
+<content>Yeni kart eklemek için “+” butonuna tıklanır.	</content><expected>“Add card” popup’ı düzgün açılmalı, başlık ve açıklama alanları görünür olmalı, herhangi bir hizalama/kırpılma problemi olmamalıdır.
+</expected></step>
+<step>
+<content>“Filters” butonuna tıklanır.	</content><expected>Filtre paneli düzgün açılmalı; tüm içerikler kutu içine sığmalı, taşma ya da kayma olmamalıdır.
+</expected></step>
+<step>
+<content>Viewport genişliği artırılarak 768pxe kadar aynı işlemler kontrol edilir.</content><expected>Genişleyen görünümde tüm öğeler ekran boyutuna uyum sağlamalı, UI bütünlüğü korunmalıdır. Butonlar, görseller, yazılar taşmamalı ve mobil tasarıma uygun şekilde hizalanmalıdır.
+
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C225</id>
+				<title>Tablet | (768px-1280px): Anasayfa Başlangıç Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>TaskPro web sayfası yayında olmalı.
+Kullanıcı giriş yapmamış olmalı (ana sayfa görünür).</preconds>
+											<steps_separated><step>
+<content>Tarayıcıda TaskPro ana sayfası açılır ve Chrome DevTools etkinleştirilir.
+
+</content><expected>TaskPro sayfası başarılı şekilde yüklenmelidir. Sayfa içeriği görünür ve işlevsel olmalıdır.
+
+</expected></step>
+<step>
+<content>Viewport genişliği 768px’e ayarlanır.
+
+</content><expected>Sayfa, öğeleri dar alana göre yeniden hizalamalıdır. Öğeler üst üste binmemeli veya taşmamalıdır.
+
+</expected></step>
+<step>
+<content>Ana sayfada bulunan logo, slogan, &quot;Register&quot; ve &quot;Login&quot; butonları kontrol edilir.
+
+</content><expected>Logo üstte ortalanmış olmalı. Slogan düzgün biçimde logonun altında görünmeli. Butonlar alt alta ve ekran genişliğine uygun hizalanmış olmalıdır.
+
+</expected></step>
+<step>
+<content>Viewport genişliği yavaş yavaş 1280px&apos;e kadar genişletilir.
+
+</content><expected>Tüm öğeler genişlik değişimine sorunsuz uyum sağlamalı, herhangi bir kayma ya da taşma olmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C226</id>
+				<title>Tablet | (768px-1280px): Registration Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, tarayıcıdan TaskPro uygulamasına erişebiliyor olmalıdır.
+Başlangıç sayfası yüklendikten sonra &quot;Register&quot; butonuna tıklanarak kayıt sayfasına yönlendirilmiş olunmalıdır.</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 768px olarak ayarlanır.
+
+</content><expected>Sayfa, tablet cihaz görünümüne uygun şekilde görüntülenmelidir.
+Form alanları ekran içinde hizalanmalı ve taşma olmamalıdır.</expected></step>
+<step>
+<content>Ad, Soyad, E-mail, Şifre ve Şifre Tekrar alanlarının görünürlüğü kontrol edilir.
+
+</content><expected>Tüm form alanları ekrana sığmalı, kullanıcı giriş yapabilmelidir.
+Label (etiket) ve input alanları hizalı olmalıdır.</expected></step>
+<step>
+<content>Genişlik yavaş yavaş 1280px&apos;e kadar artırılır.
+
+</content><expected>Tüm bileşenler genişliğe göre orantılı büyümeli, herhangi bir UI bozulması yaşanmamalıdır.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C227</id>
+				<title>Tablet | (768px-1280px): Login Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı tarayıcıda TaskPro uygulamasına erişir.
+Ana sayfada yer alan Log In (Giriş) butonuna tıklanarak giriş sayfasına yönlendirilmiş olmalıdır.</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 768px olarak ayarlanır.
+
+</content><expected>Sayfa tablet uyumlu görünmelidir. Hiçbir içerik ekran dışına taşmamalı, yatay kaydırma olmamalıdır.
+
+</expected></step>
+<step>
+<content>E-posta ve şifre alanlarının hizalaması ve ekran yerleşimi incelenir.
+
+</content><expected>Input alanları alt alta düzgün biçimde sıralanmalı, simetrik boşluklar olmalıdır.
+
+</expected></step>
+<step>
+<content>Ekran genişliği 1280px’e kadar kademeli artırılır.
+
+</content><expected>Form elemanları ekranla orantılı genişlemeli; görünümde kayma ya da hizalama sorunu olmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C228</id>
+				<title>Tablet | (768px-1280px): Giriş Sonrası (Task Board) UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı sisteme giriş yapmış olmalıdır.
+Task Board sayfası açık olmalıdır.
+Test, tablet görünümde 768px ile başlayarak 1280px’e kadar genişletilerek yapılmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 768px olarak ayarlanır.
+
+</content><expected>Sayfa tablet uyumlu görünmelidir. Yatay kaydırma olmamalı, içerikler ekran sınırları içinde kalmalıdır.
+
+</expected></step>
+<step>
+<content>“Theme” seçeneği bulunur ve tıklanır.  
+
+</content><expected>Tema (ör. Light/Dark) değişmelidir. Tema değiştikten sonra tablet uyumluluk bozulmamalıdır. Yazıların okunabilirliği, butonların görünürlüğü ve bileşenlerin hizalanması doğru şekilde devam etmelidir.
+
+</expected></step>
+<step>
+<content>Sol üstteki hamburger menüye tıklanır.  
+
+
+</content><expected>Menü açılmalı; “Task Pro”, “My Boards”, “Create a new board”, “Log out” ve “Need Help?” seçenekleri düzgün hizalanmış ve görünür olmalıdır.
+
+</expected></step>
+<step>
+<content>“Create a new board” seçeneğine tıklanır.
+
+</content><expected>Giriş alanları (ör. Board Name, Visibility vb.) tablet ekranda düzgün hizalanmalı ve taşma olmamalıdır. Giriş alanları dokunulabilir ve çalışır durumda olmalıdır. “Create” ve “Cancel” butonları görünür ve erişilebilir olmalıdır. Klavye açıldığında ekran kaymamalı ve input alanları görünürlüğünü kaybetmemelidir.
+
+</expected></step>
+<step>
+<content>Sayfanın alt kısmında “Need Help?” butonu kontrol edilir ve tıklanır.
+
+</content><expected>Buton görünür olmalı ve ekran sınırları içinde kalmalıdır.
+Buton metni okunabilir olmalı, kırpılma olmamalıdır.
+Yardım modal penceresi (popup) ekranın ortasında açılmalıdır.
+Modal pencere ekranı taşmamalıdır, dikey olarak kaydırma gerekiyorsa düzgün çalışmalıdır.</expected></step>
+<step>
+<content>Logout butonu kontrol edilir.
+
+</content><expected>Buton görünür olmalı ve ekran sınırları içinde kalmalıdır.
+Buton metni okunabilir olmalı, kırpılma olmamalıdır.</expected></step>
+<step>
+<content>“Add another column” butonu kontrol edilir.
+
+</content><expected>Buton düzgün görünmeli, tıklanabilir ve işlevsel olmalıdır.
+
+</expected></step>
+<step>
+<content>Kartların içeriği incelenir (To Do / In Progress / Done).  
+
+</content><expected>Kartlar hizalanmış olmalı; içerik kutulardan taşmamalı, metinler kırpılmadan okunabilmelidir.
+
+</expected></step>
+<step>
+<content>Sağ üstteki kullanıcı ikonuna tıklanır.
+
+</content><expected>“Edit Profile” popup’ı düzgün açılmalı, tüm input alanları görünür ve erişilebilir olmalıdır.
+
+</expected></step>
+<step>
+<content>Yeni kart eklemek için “+” butonuna tıklanır.  
+
+</content><expected>“Add card” popup’ı düzgün açılmalı, başlık ve açıklama alanları görünür olmalı, herhangi bir hizalama/kırpılma problemi olmamalıdır.
+
+</expected></step>
+<step>
+<content>“Filters” butonuna tıklanır.    
+
+</content><expected>Filtre paneli düzgün açılmalı; tüm içerikler kutu içine sığmalı, taşma ya da kayma olmamalıdır.
+
+</expected></step>
+<step>
+<content>Viewport genişliği artırılarak 1280px&apos;e kadar aynı işlemler kontrol edilir.
+
+</content><expected>Genişleyen görünümde tüm öğeler ekran boyutuna uyum sağlamalı, UI bütünlüğü korunmalıdır. Butonlar, görseller, yazılar taşmamalı ve tablet tasarıma uygun şekilde hizalanmalıdır. 1280px&apos;e gelince hamburger menü yerini sabit SideBar&apos;a bırakır. SideBar görünmelidir.
+
+ 
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C229</id>
+				<title>Desktop | (1280px+): Anasayfa Başlangıç Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>TaskPro web sayfası yayında olmalı.
+Kullanıcı giriş yapmamış olmalı (ana sayfa görünür).
+
+</preconds>
+											<steps_separated><step>
+<content>Tarayıcıda TaskPro ana sayfası açılır ve Chrome DevTools etkinleştirilir.
+
+</content><expected>TaskPro sayfası başarılı şekilde yüklenmelidir. Sayfa içeriği görünür ve işlevsel olmalıdır.
+
+</expected></step>
+<step>
+<content>Viewport genişliği 1280px’e ayarlanır.
+
+</content><expected>Sayfa, öğeleri dar alana göre yeniden hizalamalıdır. Öğeler üst üste binmemeli veya taşmamalıdır.
+
+</expected></step>
+<step>
+<content>Ana sayfada bulunan logo, slogan, &quot;Register&quot; ve &quot;Login&quot; butonları kontrol edilir.
+
+</content><expected>Logo üstte ortalanmış olmalı. Slogan düzgün biçimde logonun altında görünmeli. Butonlar alt alta ve ekran genişliğine uygun hizalanmış olmalıdır.
+
+</expected></step>
+<step>
+<content>Viewport genişliği yavaş yavaş 1440px&apos;e kadar genişletilir.
+
+
+</content><expected>Tüm öğeler genişlik değişimine sorunsuz uyum sağlamalı, herhangi bir kayma ya da taşma olmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C230</id>
+				<title>Desktop | (1280px+): Registration Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı, tarayıcıdan TaskPro uygulamasına erişebiliyor olmalıdır.
+Başlangıç sayfası yüklendikten sonra &quot;Register&quot; butonuna tıklanarak kayıt sayfasına yönlendirilmiş olunmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 1280px olarak ayarlanır.
+
+</content><expected>Sayfa, desktop cihaz görünümüne uygun şekilde görüntülenmelidir.
+Form alanları ekran içinde hizalanmalı ve taşma olmamalıdır.</expected></step>
+<step>
+<content>Ad, Soyad, E-mail, Şifre ve Şifre Tekrar alanlarının görünürlüğü kontrol edilir.
+
+</content><expected>Tüm form alanları ekrana sığmalı, kullanıcı giriş yapabilmelidir.
+Label (etiket) ve input alanları hizalı olmalıdır.</expected></step>
+<step>
+<content>Genişlik yavaş yavaş 1440px&apos;e kadar artırılır.
+
+</content><expected>Tüm bileşenler genişliğe göre orantılı büyümeli, herhangi bir UI bozulması yaşanmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C231</id>
+				<title>Desktop | (1280px+): Login Sayfası UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı tarayıcıda TaskPro uygulamasına erişir.
+Ana sayfada yer alan Log In (Giriş) butonuna tıklanarak giriş sayfasına yönlendirilmiş olmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 1280px olarak ayarlanır.
+
+</content><expected>Sayfa dekstop uyumlu görünmelidir. Hiçbir içerik ekran dışına taşmamalı, yatay kaydırma olmamalıdır.
+
+</expected></step>
+<step>
+<content>E-posta ve şifre alanlarının hizalaması ve ekran yerleşimi incelenir.
+
+</content><expected>Input alanları alt alta düzgün biçimde sıralanmalı, simetrik boşluklar olmalıdır.
+
+</expected></step>
+<step>
+<content>Ekran genişliği 1440px’e kadar kademeli artırılır.
+
+</content><expected>Form elemanları ekranla orantılı genişlemeli; görünümde kayma ya da hizalama sorunu olmamalıdır.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C232</id>
+				<title>Desktop | (1280px+): Giriş Sonrası (Task Board) UI Testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı sisteme giriş yapmış olmalıdır.
+Task Board sayfası açık olmalıdır.
+Test, desktop görünümde 1280px ile başlayarak 1440px’e kadar genişletilerek yapılmalıdır.
+
+</preconds>
+											<steps_separated><step>
+<content>Viewport genişliği 1280px olarak ayarlanır.
+
+</content><expected>Sayfa desktop uyumlu görünmelidir. Yatay kaydırma olmamalı, içerikler ekran sınırları içinde kalmalıdır.
+
+</expected></step>
+<step>
+<content>“Theme” seçeneği bulunur ve tıklanır.  
+
+</content><expected>Tema (ör. Light/Dark) değişmelidir. Tema değiştikten sonra desktop uyumluluk bozulmamalıdır. Yazıların okunabilirliği, butonların görünürlüğü ve bileşenlerin hizalanması doğru şekilde devam etmelidir.
+
+</expected></step>
+<step>
+<content>SideBar alanı kontrol edilir.
+</content><expected>“Task Pro” logusu, “My Boards”, “Create a new board”, “Log out” ve “Need Help?” seçenekleri düzgün hizalanmış ve görünür olmalıdır.
+
+</expected></step>
+<step>
+<content>“Create a new board” seçeneğine tıklanır.
+
+</content><expected>Giriş alanları (ör. Board Name, Visibility vb.) desktop ekranda düzgün hizalanmalı ve taşma olmamalıdır. Giriş alanları dokunulabilir ve çalışır durumda olmalıdır. “Create” ve “Cancel” butonları görünür ve erişilebilir olmalıdır. Klavye açıldığında ekran kaymamalı ve input alanları görünürlüğünü kaybetmemelidir.
+
+</expected></step>
+<step>
+<content>Sayfanın alt kısmında “Need Help?” butonu kontrol edilir ve tıklanır.
+
+</content><expected>Buton görünür olmalı ve ekran sınırları içinde kalmalıdır.
+Buton metni okunabilir olmalı, kırpılma olmamalıdır.
+Yardım modal penceresi (popup) ekranın ortasında açılmalıdır.
+Modal pencere ekranı taşmamalıdır, dikey olarak kaydırma gerekiyorsa düzgün çalışmalıdır.</expected></step>
+<step>
+<content>Logout butonu kontrol edilir.
+
+</content><expected>Buton görünür olmalı ve ekran sınırları içinde kalmalıdır.
+Buton metni okunabilir olmalı, kırpılma olmamalıdır.</expected></step>
+<step>
+<content>“Add another column” butonu kontrol edilir.
+
+</content><expected>Buton düzgün görünmeli, tıklanabilir ve işlevsel olmalıdır.
+
+</expected></step>
+<step>
+<content>Kartların içeriği incelenir (To Do / In Progress / Done).  
+
+</content><expected>Kartlar hizalanmış olmalı; içerik kutulardan taşmamalı, metinler kırpılmadan okunabilmelidir.
+
+</expected></step>
+<step>
+<content>Sağ üstteki kullanıcı ikonuna tıklanır.
+
+</content><expected>“Edit Profile” popup’ı düzgün açılmalı, tüm input alanları görünür ve erişilebilir olmalıdır.
+
+</expected></step>
+<step>
+<content>Yeni kart eklemek için “+” butonuna tıklanır.  
+
+</content><expected>“Add card” popup’ı düzgün açılmalı, başlık ve açıklama alanları görünür olmalı, herhangi bir hizalama/kırpılma problemi olmamalıdır.
+
+</expected></step>
+<step>
+<content>“Filters” butonuna tıklanır.    
+
+</content><expected>Filtre paneli düzgün açılmalı; tüm içerikler kutu içine sığmalı, taşma ya da kayma olmamalıdır.
+
+</expected></step>
+<step>
+<content>Viewport genişliği artırılarak 1440px&apos;e kadar aynı işlemler kontrol edilir.
+
+</content><expected>Genişleyen görünümde tüm öğeler ekran boyutuna uyum sağlamalı, UI bütünlüğü korunmalıdır. Butonlar, görseller, yazılar taşmamalı ve desktop tasarıma uygun şekilde hizalanmalıdır. 1280px&apos;e gelince hamburger menü yerini sabit SideBar&apos;a bırakır. SideBar görünmelidir.
+
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C233</id>
+				<title>Başlangıç Sayfası UI öğeleri görünürlük testi</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>High</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı &quot;anasayfa&quot; üzerindedir.</preconds>
+											<steps_separated><step>
+<content>Sayfa ilk yüklendiğinde uygulamanın adı/logosu görüntülenir mi kontrol edilir.</content><expected>Logo veya uygulama adı ekranın üst kısmında görünür olmalıdır.</expected></step>
+<step>
+<content>Sayfa üzerinde görsel öğe kontrol edilir.</content><expected>Anasayfada kullanıcıyı uygulamaya teşvik eden bir görsel görünür olmalıdır.</expected></step>
+<step>
+<content>Teşvik edici bir cümle olup olmadığı kontrol edilir.</content><expected>Uygulamayı tanıtan ya da kullanmaya yönlendiren bir açıklama metni görünür olmalıdır.</expected></step>
+<step>
+<content>“Registration” butonuna tıklanır.</content><expected>Kullanıcı kayıt formu sayfasına yönlendirilmelidir.</expected></step>
+<step>
+<content>“Log In” butonuna tıklanır.</content><expected>Kullanıcı giriş formu sayfasına yönlendirilmelidir.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>API Tests</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Users</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C541</id>
+				<title>[API] POST /user/register – Başarılı Kayıt (201)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. {{base_url}}/user/register endpoint erişilebilir olmalı.
+
+2. Kullanılacak e-posta adresi sistemde kayıtlı olmamalı (benzersiz olmalı).
+
+3. Content-Type application/json olarak ayarlanmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/register endpointine istek gönder.
+2. Request body olarak aşağıdaki JSON gönderilir:
+{ &quot;name&quot;: &quot;Duka&quot;, &quot;email&quot;: &quot;duka@mail.com&quot;, &quot;password&quot;: &quot;pwd1234567&quot; }
+3. Response status code kontrol edilir.
+4. Response body kontrol edilir.</steps>
+											<expected>1. API, 201 HTTP yanıt kodu döner.
+
+2. Response body içinde &quot;message&quot;: &quot;Successful registration&quot; yer alır.
+
+3. Kayıt başarılıdır, kullanıcı artık sistemde kayıtlıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C542</id>
+				<title>[API] POST /user/register – Kayıtlı E-Posta ile Kayıt Girişimi (409)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. API base URL tanımlı ve erişilebilir olmalı: {{base_url}}
+
+2. E-posta sistemde daha önce başarıyla kaydedilmiş olmalı: duka@mail.com
+
+3. Endpoint /user/register aktif olmalı.
+
+4. Content-Type: application/json header&apos;ı eklenmiş olmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/register endpointine istek gönder	
+2. Request body olarak aşağıdaki JSON gönderilir:	
+{ &quot;name&quot;: &quot;Duka&quot;, &quot;email&quot;: &quot;duka@mail.com&quot;, &quot;password&quot;: &quot;pwd1234567&quot; }	
+3. HTTP yanıt kodu kontrol edilir.
+4. Response body kontrol edilir. Hata mesajı anlamlı şekilde dönmeli (örneğin: &quot;Email already in use&quot;)
+	</steps>
+											<expected>1. API, 409 Conflict HTTP yanıt kodunu döner.
+
+2. Response body, e-posta adresinin zaten kayıtlı olduğunu belirten anlamlı bir hata mesajı içermelidir.
+
+3. Yanıt süresi 1 saniyeden kısa olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C543</id>
+				<title>[API] POST /user/register – Eksik Alanlarla Kayıt Girişimi (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. API {{base_url}}/user/register endpoint’i aktif ve erişilebilir olmalı.
+
+2. Request body&apos;de zorunlu alanlardan biri eksik olacak şekilde istek gönderilmeli.
+
+3. Content-Type: application/json header&apos;ı eklenmiş olmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/register endpointine istek gönderilir.
+2. Request body şu şekilde gönderilir:	{ &quot;email&quot;: &quot;duka@mail.com&quot;, &quot;password&quot;: &quot;pwd1234567&quot; } (name eksik)
+3. HTTP yanıt kodu kontrol edilir.
+4. Response body anlamlı bir hata mesajı içermeli. Örneğin &quot;Missing fields&quot; veya &quot;Name is required&quot;.
+5. Yanıt süresi ölçülür. 1000ms altında olmalı.
+</steps>
+											<expected>1. API 400 HTTP kodu döner.
+
+2. Hata mesajı eksik alanla ilgili uyarı içerir.
+
+3. Yanıt süresi 1 saniyeden kısa olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C544</id>
+				<title>[API] POST /user/login – Başarılı Giriş (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. duka@mail.com adresi ve pwd1234567 şifresiyle önceden başarılı şekilde kayıt olunmuş olmalı.
+
+2. Endpoint /user/login erişilebilir olmalı.
+
+3. Content-Type: application/json header’ı kullanılmalı.</preconds>
+											<steps>1. 	POST {{base_url}}/user/login endpointine istek gönder.
+2	Request body şu şekilde gönderilir: { &quot;email&quot;: &quot;duka@mail.com&quot;, &quot;password&quot;: &quot;pwd1234567&quot; }
+3	HTTP yanıt kodu kontrol edilir.
+4	Response body JSON olarak kontrol edilir.
+5	Aşağıdaki alanlar response body&apos;de yer almalı: 
+              token, refreshToken, name, theme, avatar
+6	Yanıt süresi ölçülür.	(1000ms altında olmalı.)</steps>
+											<expected>1. API, HTTP 200 yanıtı döner.
+
+2. Dönüşte aşağıdaki alanlar bulunur:
+
+     token: JWT token
+
+     refreshToken: JWT refresh token
+
+     name: Kullanıcı adı
+
+     theme: Tema tercihi
+
+     avatar: Avatar bilgisi (boş string olabilir)
+
+3. Yanıt 1 saniyeden kısa sürede dönmelidir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C545</id>
+				<title>[API] POST /user/login – Eksik Alanlarla Giriş (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Endpoint /user/login erişilebilir olmalı.
+
+2. Request body’de zorunlu alanlardan biri eksik olmalı.
+
+3. Content-Type: application/json header’ı eklenmiş olmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/login endpointine istek gönderilir.
+2. Request body şu şekilde gönderilir: { &quot;email&quot;: &quot;duka@mail.com&quot; } (password eksik)
+3. HTTP yanıt kodu kontrol edilir.
+4. Response body anlamlı bir hata mesajı içermeli. Örneğin &quot;Missing fields&quot; ya da &quot;password is required&quot;
+5. Yanıt süresi ölçülür. (1000ms altında olmalı)
+
+</steps>
+											<expected>1. API isteğine HTTP 400 Bad Request yanıtı döner.
+
+2. Yanıt body’sinde, eksik alan ile ilgili anlamlı ve açıklayıcı bir hata mesajı bulunur. Örneğin; &quot;missing required field&quot;, &quot;password is required&quot; veya benzeri bir mesaj.
+
+3. Yanıt süresi 1000ms’den (1 saniye) kısa olmalıdır.
+
+4. Kullanıcı giriş işlemi başarısız olur, sistem eksik veri nedeniyle işlemi kabul etmez.
+
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C546</id>
+				<title>[API] POST /user/login – Yanlış Email veya Şifre (404)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Endpoint /user/login erişilebilir olmalı.
+
+2. Kullanıcı veritabanında kayıtlı olmayan veya yanlış şifre ile giriş yapılacak.
+
+3. Content-Type: application/json header’ı eklenmiş olmalı.
+
+</preconds>
+											<steps>1. POST {{base_url}}/user/login endpointine istek gönderilir.
+2. Request body şu şekilde gönderilir: { &quot;email&quot;: &quot;wrong@mail.com&quot;, &quot;password&quot;: &quot;wrongpwd&quot; }
+3. HTTP yanıt kodu kontrol edilir.
+4. Response body anlamlı bir hata mesajı içermeli.
+5. Yanıt süresi ölçülür. (1000ms altında olmalı)</steps>
+											<expected>1. API, HTTP 404 Not Found yanıt kodu döner.
+
+2. Response body’sinde &quot;Wrong email or password&quot; veya benzeri açıklayıcı bir hata mesajı bulunur.
+
+3. Yanıt süresi 1 saniyeden kısa olmalıdır.
+
+4. Giriş işlemi başarısız olur.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C547</id>
+				<title>[API] POST /user/refresh – Token Yenileme Başarılı (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli bir refreshToken mevcut olmalı (örneğin daha önce login ile alınmış).
+
+2. Endpoint /user/refresh erişilebilir olmalı.
+
+3. Content-Type: application/json header’ı kullanılmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/refresh endpointine istek gönderilir.
+2. Request body şu şekilde gönderilir: { &quot;refreshToken&quot;: &quot;&lt;geçerli_refresh_token&gt;&quot; }
+3. HTTP yanıt kodu kontrol edilir.
+4. Response body JSON olarak kontrol edilir.
+5. Response body’de token ve refreshToken alanları olmalı.
+6. Yanıt süresi ölçülür. (1000ms altında olmalı)
+</steps>
+											<expected>1. API, HTTP 200 OK yanıt kodu döner.
+
+2. Response body içinde yeni token ve refreshToken alanları döner.
+
+3. Tokenlar geçerli string formatında ve boş olmayan değerlerdir.
+
+4. Yanıt süresi 1 saniyeden kısa olmalıdır.
+
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C548</id>
+				<title>[API] POST /user/refresh – Eksik Alanlarla Token Yenileme (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Endpoint erişilebilir olmalı.
+
+Request body’de refreshToken alanı gönderilmemiş olmalı.
+
+Content-Type: application/json header kullanılmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/refresh endpointine istek gönderilir.
+2. Request body boş veya {} olarak gönderilir.	
+3. HTTP status kodu kontrol edilir.
+4. Response body’de anlamlı hata mesajı bulunmalı, &quot;missing&quot; veya &quot;required&quot; içermeli
+5. Yanıt süresi ölçülür. (1000ms altında olmalı)
+</steps>
+											<expected>1. API, HTTP 400 Bad Request yanıt kodu döner.
+
+2. Response body’de refreshToken alanının eksik olduğuna dair anlamlı ve açıklayıcı bir hata mesajı bulunur.
+Örnek: &quot;missing required field&quot;
+
+3. Yanıt süresi 1000ms’den (1 saniye) kısa olmalıdır.
+
+4. Token yenileme işlemi başarısız olur; eksik alan nedeniyle istek reddedilir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C549</id>
+				<title>[API] POST /user/refresh – Geçersiz Token ile Yenileme (403)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Endpoint erişilebilir olmalı.
+
+2. Request body’de geçersiz veya süresi dolmuş bir refreshToken gönderilmeli.
+
+3. Content-Type: application/json header kullanılmalı.</preconds>
+											<steps>1. POST {{base_url}}/user/refresh endpointine istek gönderilir.
+2. Request body { &quot;refreshToken&quot;: &quot;invalid_or_expired_token&quot; }	
+3. HTTP status kodu kontrol edilir.
+4. Response body’de anlamlı hata mesajı bulunmalı.
+5. Yanıt süresi ölçülür. (1000ms altında olmalı)</steps>
+											<expected>1. API, HTTP 403 Forbidden yanıt kodu döner.
+
+2. Response body’de gönderilen refreshToken’ın geçersiz veya süresi dolmuş olduğuna dair anlamlı ve açıklayıcı bir hata mesajı bulunur.
+Örnek: &quot;invalid token&quot;
+
+3. Yanıt süresi 1000ms’den (1 saniye) kısa olmalıdır.
+
+4. Token yenileme işlemi başarısız olur ve yeni token verilmez.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C550</id>
+				<title>[API] GET /user/me – Başarılı Kullanıcı Bilgisi Alma (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli ve aktif bir Bearer token (Authorization header’da) var.
+
+2. Endpoint erişilebilir olmalı.</preconds>
+											<steps>1. GET {{base_url}}/user/me endpoint’ine istek gönderilir.
+2. Authorization header’a geçerli Bearer token eklenir.
+3. HTTP status kodu kontrol edilir.
+4. Response JSON parse edilir ve alanlar doğrulanır. (name, email, avatar, theme alanları)
+5. Yanıt süresi ölçülür. (1000ms altında olmalı)</steps>
+											<expected>1. API isteğine HTTP 200 OK yanıt kodu döner.
+
+2. Response body JSON formatındadır.
+
+3. Aşağıdaki alanlar eksiksiz olarak döner:
+
+    &quot;name&quot;: Kullanıcının adı (örnek: &quot;Duka&quot;)
+
+     &quot;email&quot;: Kayıtlı e-posta adresi (örnek: &quot;duka@mail.com&quot;)
+
+     &quot;avatar&quot;: Profil resmi bilgisi (örnek: &quot;string&quot; veya URL)
+
+     &quot;theme&quot;: Kullanıcı tema tercihi (örnek: &quot;dark&quot;)
+
+4. Yanıt süresi 1000ms’den kısa olmalıdır.
+
+5. Kullanıcının kimliği başarılı şekilde doğrulanmış ve verileri alınmıştır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C551</id>
+				<title>[API] GET /user/me – Yetkilendirme Hatası (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Authorization header eksik, yanlış veya geçersiz token ile istek gönderilir.
+
+2. Endpoint erişilebilir.</preconds>
+											<steps>1. GET {{base_url}}/user/me endpoint’ine istek gönderilir.
+2. Authorization header ya hiç gönderilmez ya da geçersiz token kullanılır.
+3. Response body anlamlı hata mesajı içerir. Örneğin; &quot;Not authorized&quot;.
+4. Yanıt süresi ölçülür. (1000ms altında olmalı)</steps>
+											<expected>1. API, HTTP 401 Unauthorized yanıt kodu döner.
+
+2. Authorization header eksik, hatalı ya da geçersiz bir token içerdiği için istek reddedilir.
+
+3. Response body, anlamlı ve açıklayıcı bir hata mesajı içerir. 
+
+4. Token olmadan kullanıcı doğrulaması yapılamadığı için sistem kullanıcı bilgisi döndürmez.
+
+5. Yanıt süresi 1000ms’den kısa olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C552</id>
+				<title>[API] PATCH /user/theme – Başarılı Tema Güncelleme (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı login olmuş olmalı ve geçerli Bearer token&apos;a sahip olmalı.
+
+2. Endpoint erişilebilir olmalı.
+
+3. theme alanı desteklenen bir tema ismi içermeli (örneğin &quot;violet&quot;, &quot;dark&quot;, &quot;light&quot;).</preconds>
+											<steps>1. PATCH {{base_url}}/user/theme endpoint’ine istek gönderilir.
+2. Authorization header&apos;a geçerli token eklenir.
+3. Request body’ye &quot;theme&quot;: &quot;violet&quot; eklenir.
+4. HTTP status code kontrol edilir.
+5. Response body’de güncellenen &quot;theme&quot; alanı döner.
+6. Yanıt süresi ölçülür. (1000ms altında)</steps>
+											<expected>1. HTTP 200 OK yanıtı döner.
+
+2. Response body’de &quot;theme&quot; alanı, güncellenen yeni temayı (&quot;violet&quot;) içerir.
+
+3. Kullanıcının tema tercihi başarılı şekilde güncellenmiştir.
+
+4. Yanıt süresi 1 saniyeden kısa olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C553</id>
+				<title>[API] PATCH /user/theme – Eksik theme Alanı (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Token geçerli olmalı.
+
+2. Request body’de &quot;theme&quot; alanı bulunmamalı.</preconds>
+											<steps>1. PATCH /user/theme endpoint’ine istek yapılır.	
+2. Request body {} olarak gönderilir.	
+3. HTTP status code kontrol edilir.
+4. Hata mesajı kontrol edilir. 
+5. Yanıt süresi ölçülür. (1000ms altında olmalı)</steps>
+											<expected>1. HTTP 400 Bad Request yanıtı döner.
+
+2. Response body’de &quot;theme&quot; alanının eksik olduğuna dair anlamlı hata mesajı yer alır. Örnek: &quot;missing field&quot;
+
+3. Yanıt süresi 1000ms altında olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C554</id>
+				<title>[API] PATCH /user/theme – Yetkilendirme Hatası (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Authorization header ya eksik ya da geçersiz token içeriyor.
+
+</preconds>
+											<steps>1. Token olmadan veya hatalı token ile istek yapılır	
+2. HTTP status code kontrol edilir.
+3. Hata mesajı kontrol edilir.
+4. Yanıt süresi ölçülür. (1000ms altında)
+</steps>
+											<expected>1. HTTP 401 Unauthorized yanıt kodu döner.
+
+2. Response body’de &quot;Not authorized&quot; hata mesajı yer alır.
+
+3. Yanıt süresi 1 saniyeden kısa olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C555</id>
+				<title>[API] PUT /user/update – Başarılı Bilgi Güncelleme (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı login olmuş olmalı ve geçerli Bearer token&apos;a sahip olmalı.
+
+</preconds>
+											<steps>1. PUT /user/update endpoint’ine istek gönderilir.
+2. Authorization header’a geçerli token eklenir.
+3. Body’ye &quot;name&quot;, &quot;email&quot;, &quot;password&quot; eklenir.	
+4. Status code kontrol edilir.	
+5. Response body’de &quot;name&quot;, &quot;email&quot; döner.
+6. Yanıt süresi kontrol edilir. (1000ms altında olmalı)</steps>
+											<expected>1. HTTP 200 OK yanıtı alınır.
+
+2. Response body&apos;de &quot;name&quot;, &quot;email&quot; alanları döner.
+
+3. Değerler gönderilen yeni bilgilerle uyumlu olur.
+
+4. Şifre gibi alanlar response içinde yer almaz (güvenlik gereği).
+
+5. Yanıt süresi 1 saniyeden kısa olmalıdır.
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C556</id>
+				<title>[API] PUT /user/update – Eksik Alanlar (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı geçerli token ile yetkilendirilmiş olmalı.
+
+2. Request body eksik alan içerecek şekilde yapılandırılmalı.</preconds>
+											<steps>1. PUT /user/update endpoint’i çağrılır.
+2. Request body şu şekilde hazırlanır: { &quot;name&quot;: &quot;Duka&quot; }
+3. Geçerli token ile Authorization header’a Bearer {{valid_token}} eklenir.
+4. İstek gönderilir.
+5. Status code kontrol edilir. 
+6. Response body’de &quot;missing required email field&quot; ifadesi içeren hata mesajı aranır.
+</steps>
+											<expected>1. HTTP 400 Bad Request döner.
+
+2. Hata mesajı şu anahtar kelimeleri içermelidir. &quot;missing required email field&quot;
+
+3. Response JSON formatında olmalı.
+
+4. Yanıt süresi 1000ms’den kısa olmalıdır.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C557</id>
+				<title>[API] PUT /user/update – Yetkilendirme Başarısız Olmalı (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Token eksik ya da geçersizdir.
+
+2. Request body tam ve geçerlidir.</preconds>
+											<steps>1. PUT /user/update endpoint’i seçilir.
+2. Body tam olarak doldurulur.
+3. Authorization kısmı boş bırakılır veya geçersiz token eklenir.
+4. İstek gönderilir.
+5. HTTP yanıt kodu kontrol edilir.
+6. Hata mesajı &quot;Not authorized&quot; içermelidir.</steps>
+											<expected>1. HTTP 401 Unauthorized döner.
+
+2. Hata mesajı kullanıcıya anlamlı bilgi verir.
+
+3. Yanıt süresi 1 saniyeden kısa olur.
+
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C558</id>
+				<title>[API] PUT /user/update – Kullanımdaki E-Posta ile Güncelleme (409)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Güncellenmek istenen email adresi sistemde başka bir kullanıcıya aittir.
+
+Token geçerlidir.</preconds>
+											<steps>1. PUT /user/update endpoint’i seçilir.
+2. Body&apos;de &quot;email&quot;: &quot;already@exists.com&quot; olarak girilir.
+3. Authorization token eklenir.
+4. İstek gönderilir.
+5. HTTP yanıt kodu kontrol edilir.
+6. Hata mesajında &quot;email&quot; ve &quot;in use&quot; gibi ifadeler aranır.</steps>
+											<expected>1. HTTP 409 Conflict döner.
+
+2. Response’da &quot;email already in use&quot; gibi bir mesaj yer alır.
+
+3. Sistem aynı e-posta adresini farklı kullanıcıya atayamaz.
+
+4. Yanıt süresi 1000ms’den kısa olur.
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C581</id>
+				<title>[API] POST /user/logout - Başarılı Çıkış (204)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı sisteme giriş yapmış olmalı.
+
+2. Geçerli bir Bearer Token olmalı.</preconds>
+											<steps>1. POST /user/logout isteği gönderilir.
+
+2. Header’a geçerli Authorization: Bearer &lt;token&gt; eklenir.
+
+3. Body boş bırakılır.</steps>
+											<expected>1. HTTP status: 204 No Content
+
+2. Response body: Boş
+
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C582</id>
+				<title>[API] POST /user/logout - Eksik Authorization Header ile Logout Denemesi (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Kullanıcı sisteme giriş yapmamış ya da geçersiz/süresi dolmuş token kullanılmış olmalı.</preconds>
+											<steps>1. POST /user/logout endpoint’ine istek gönderilir.
+
+2. Hatalı Authorization durumlarından biri uygulanır:
+
+Authorization header hiç eklenmez
+
+Header Bearer kelimesi olmadan sadece token yazılır
+
+Token formatı bozuk (örneğin: &quot;abc123&quot;)
+
+Süresi dolmuş (expired) token kullanılır
+
+3. Gönderim Content-Type: application/json header&apos;ı ile yapılır</steps>
+											<expected>1. HTTP 401 Unauthorized
+
+2. Response body yanıtı: &quot;Not authorized&quot;</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Boards</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C559</id>
+				<title>[API] POST /boards – Başarılı Board Oluşturma (201)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı login olmuştur ve geçerli bir Bearer token’a sahiptir.
+
+2. API endpoint çalışır durumdadır.
+
+3. Gerekli tüm alanlar (title, icon, background) doğru şekilde girilecektir.</preconds>
+											<steps>1. Postman’da POST {{base_url}}/boards endpoint’i seçilir.
+2. Authorization kısmına Bearer {{valid_token}} eklenir.
+3. Body olarak şu JSON verisi girilir: 
+    {
+  &quot;title&quot;: &quot;My project&quot;,
+  &quot;icon&quot;: &quot;star&quot;,
+  &quot;background&quot;: &quot;https://some-cloud-name.com/path/to/image/bg.jpg&quot;
+}
+4. İstek gönderilir. 
+5. HTTP status code kontrol edilir.
+6. Response body’de `_id` alanı olup olmadığı kontrol edilir. 
+7. Yanıt süresi 1000ms’den kısa olmalı.</steps>
+											<expected>1. Status code: **201 Created**  
+2. Response şu formatta olmalı:
+```json
+{
+  &quot;_id&quot;: &quot;bir_id_değeri&quot;
+}
+_id alanı string formatında olmalı (MongoDB ID gibi).
+
+3. Yanıt süresi 1000ms altında olmalı.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C560</id>
+				<title>[API] POST /boards – Eksik Alanlar ile İstek (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı login olmuştur ve geçerli token’a sahiptir.
+
+2. Request body&apos;de en az bir zorunlu alan eksik olmalıdır.</preconds>
+											<steps>1. POST {{base_url}}/boards endpoint’i seçilir.
+2. Token eklenir: Bearer {{valid_token}}
+3. Eksik body gönderilir, örneğin; {
+  &quot;title&quot;: &quot;My project&quot;
+}
+4. İstek gönderilir. 
+5. HTTP status kontrol edilir.
+6. Response body’de &quot;missing required icon field&quot;` geçen hata mesajı kontrol edilir. </steps>
+											<expected>1. Status code: **400 Bad Request**  
+2. Hata mesajı `&quot;missing required icon field&quot; içermelidir.
+3. JSON response formatı olmalı.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C561</id>
+				<title>[API] POST /boards – Yetkilendirme Hatası (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Authorization header ya boş bırakılır, ya da geçersiz token kullanılır.
+
+</preconds>
+											<steps>1. POST {{base_url}}/boards endpoint’i çağrılır.
+2. Token kısmı boş bırakılır veya hatalı bir token yazılır.
+3. Body tam doldurulur (title, icon, background).
+4. HTTP status code: 401 Unauthorized kontrol edilir.
+5. Response mesajı &quot;Not authorized&quot; içerir mi kontrol edilir.</steps>
+											<expected>1. Status code: 401 Unauthorized
+
+2. Response mesajı: &quot;Not authorized&quot; dönmelidir.
+
+
+
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C562</id>
+				<title>[API] GET /boards - Tüm Board&apos;ları Getirme [200 OK]</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı giriş yapmıştır ve geçerli Bearer token kullanmaktadır.
+
+2. Sistemde kullanıcının oluşturduğu en az 1 board vardır.</preconds>
+											<steps>1. Postman’da GET /boards endpoint’i çağrılır.
+2. Authorization kısmına: Bearer &lt;geçerli_token&gt; yazılır.	
+3. İstek gönderilir.
+4. HTTP status: 200 OK kontrol edilir.
+5. Response tipi: JSON array
+6. Her board nesnesinin içinde _id, title, icon, columns alanları olup olmadığı kontrol edilir.
+7. En az bir column varsa, onun içinde tasks var mı kontrol edilir.</steps>
+											<expected>1. Status code: 200 OK
+
+2. Response JSON şu yapıda olmalı:
+ {
+        &quot;_id&quot;: &quot;685cd9ac81cc2c78cd6ae54d&quot;,
+        &quot;title&quot;: &quot;My project&quot;,
+        &quot;icon&quot;: &quot;star&quot;,
+        &quot;background&quot;: &quot;Ocean&quot;,
+        &quot;user&quot;: &quot;685ab9e581cc2c78cd6ae4ee&quot;,
+        &quot;columns&quot;: []
+    }
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C563</id>
+				<title>[API] GET /boards - Token eksik veya hatalı  [401 Unauthorized]</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Authorization header eksiktir veya geçersiz token girilmiştir.
+
+</preconds>
+											<steps>1. GET {{base_url}}/boards endpoint’i çağrılır.
+2. Authorization kısmı boş bırakılır ya da geçersiz token girilir.
+3. HTTP status: 401 Unauthorized kontrol edilir.
+4. Response mesajı: &quot;Not authorized&quot; gibi bir hata içeriyor mu kontrol edilir.</steps>
+											<expected>1. Status code: 401 Unauthorized
+
+2. Response:
+{
+  &quot;message&quot;: &quot;Not authorized&quot;
+} 
+Kullanıcıya veri dönmez.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C564</id>
+				<title>[API] PUT /boards – Başarılı Board Güncelleme [200 OK]</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı login olmuştur.
+
+2. Geçerli bir Bearer Token kullanılır.
+
+3. Güncellenmek istenen boardId geçerli ve kullanıcıya aittir.
+
+4. Tüm zorunlu alanlar (title, icon, background) body’de eksiksiz gönderilir.
+
+</preconds>
+											<steps>1. PUT /boards/{boardId} endpoint’i seçilir.
+2. {boardId} yerine geçerli bir board ID’si yazılır.
+3. Authorization kısmına: Bearer &lt;geçerli_token&gt; eklenir.	
+4. Request Body şu şekilde verilir: title, icon, background bilgileri.
+5. İstek gönderilir. 
+6. HTTP status code: **200 OK** kontrol edilir. 
+7. Mesaj: &quot;Successful update&quot; kontrol edilir. </steps>
+											<expected>1. Status code: **200 OK**
+2. Response:
+{
+  &quot;message&quot;: &quot;Successful update&quot;
+} olmalıdır.
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C565</id>
+				<title>[API] PUT /boards/{boardId} – Eksik alanlarla board güncelleneme [400 Bad Request]</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı login olmuştur.
+
+2. Token geçerlidir.
+
+3. Body eksik veri içerir (örneğin sadece title).</preconds>
+											<steps>1. PUT {{base_url}}/boards/{{boardID} girilir.
+2. Token doğru girilir.
+3. Request body eksik bırakılır: örnek sadece title girilir.
+4. İstek gönderilir. 
+5. HTTP status: 400 Bad Request kontrol edilir. 
+6. Hata mesajı &quot;missing required icon field&quot; içeriyor mu kontrol edilir. </steps>
+											<expected>- Status code: **400 Bad Request**
+- Message içeriği:
+{
+  &quot;message&quot;: &quot;Missing required fields&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C566</id>
+				<title>[API] PUT /boards/{boardId} – Token yoksa yetkisiz erişim [401 Unauthorized]</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>Token eksik ya da geçersizdir.
+
+</preconds>
+											<steps>1. PUT {{base_url}}/boards/{{boardID}} endpoint girilir.
+2. Authorization kısmı boş bırakılır ya da hatalı token verilir.
+3. Request body tam verilir.
+4. HTTP status: 401 Unauthorized kontrol edilir.</steps>
+											<expected>1. Status code 401 Unauthorized olmalıdır.
+2. JSON yanıtı {
+  &quot;message&quot;: &quot;Not authorized&quot;
+} olmalıdır.
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C567</id>
+				<title>[API] PUT /boards/{boardId} – Geçersiz boardId verildiğinde hata döner [404 Not Found]</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli token ile erişilir.
+
+2. Ancak {boardId} sistemde bulunmayan bir ID&apos;dir.
+
+</preconds>
+											<steps>1. Geçersiz bir boardId ile istek yapılır.
+2. Token ve body bilgileri girilir.
+3. HTTP status: 404 Not Found kontrol edilir.
+
+</steps>
+											<expected>1. Status code: 404 not found dönmelidir. 
+2. JSON yanıtı: {
+  &quot;message&quot;: &quot;Board not found&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C568</id>
+				<title>[API] DELETE /boards{boardID} - Başarılı Silme (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli kullanıcı token’ı mevcut
+
+2. Silinecek board sistemde var ve kullanıcıya ait</preconds>
+											<steps>1. DELETE /boards/{boardId} isteği gönder.
+
+2. Header kısmına geçerli Authorization token ekle.
+
+3. {boardId} olarak var olan bir board ID kullan.
+
+
+</steps>
+											<expected>1. Status code: 200 OK
+
+2. Response body:
+{
+  &quot;message&quot;: &quot;Board deleted&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C569</id>
+				<title>[API] DELETE /boards{boardID} - Yetkisiz Silme (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Token geçersiz veya header&apos;da Authorization hiç eklenmemiş.
+
+2. Geçerli board ID kullanılmış olsa da erişim sağlanamaz.</preconds>
+											<steps>1. DELETE /boards/{boardId} isteği gönder.
+
+2. Authorization header&apos;ı yanlış token ile ya da hiç olmadan gönder.
+
+3. {boardId} olarak sistemdeki geçerli bir ID kullan.</steps>
+											<expected>1. Status code: 401 Unauthorized
+
+2. Response body:
+{
+  &quot;message&quot;: &quot;Not authorized&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C570</id>
+				<title>[API] DELETE /boards{boardID} - Geçersiz board id silme (404)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Authorization token geçerli.
+
+2. {boardId} sistemde kayıtlı olmayan veya daha önce silinmiş bir ID.</preconds>
+											<steps>1. DELETE /boards/{invalidBoardId} isteği gönder.
+
+2. Geçerli token ile request yap.
+
+3. Kullanılan boardId geçersiz veya sistemde kayıtlı değil.</steps>
+											<expected>1. Status code: 404 Not Found
+
+2. Response body:
+{
+  &quot;message&quot;: &quot;Board not found&quot;
+}</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Columns</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C571</id>
+				<title>[API] POST /columns - Yeni Kolon Oluşturma (201)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli kullanıcı token’ı mevcut
+
+2. Kullanıcının erişim yetkisi olan bir boardId mevcut</preconds>
+											<steps>1. POST /columns endpoint’ine istek gönder
+
+2. Authorization header&apos;a geçerli token ekle
+
+3. Body&apos;ye geçerli title ve board ID bilgisi ekle
+
+</steps>
+											<expected>1. Status code: 201 Created
+
+2. Response body:
+{
+  &quot;_id&quot;: &quot;&lt;oluşan id&gt;&quot;,
+  &quot;title&quot;: &quot;To do&quot;,
+  &quot;board&quot;: &quot;649885bb8cfd32ed13fd42d3&quot;,
+  &quot;order&quot;: &lt;number&gt;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C572</id>
+				<title>[API] POST /columns - Yetkisiz Erişim (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Token header&apos;da eksik veya yanlış.
+
+2. Geçerli bir request body kullanılıyor.</preconds>
+											<steps>1. POST /columns isteği gönder.
+
+2. Header kısmında Authorization token yanlış veya hiç olmadan gönder.
+
+3. Body’ye geçerli title ve board gir.</steps>
+											<expected>1. Status code: 401 Unauthorized
+
+2. Response body:
+{
+  &quot;message&quot;: &quot;Not authorized&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C573</id>
+				<title>[API] POST /columns - Eksik Body Bilgisi (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli token mevcut
+
+2. Body&apos;de zorunlu alanlardan biri (örneğin title) eksik</preconds>
+											<steps>1. POST /columns isteği gönder
+
+2. Geçerli token header’a ekle
+
+3. Body’de eksik bilgi gönder (örneğin sadece &quot;board&quot; alanı)</steps>
+											<expected>1. Status code: 400 Bad Request
+
+2. Response body:
+{
+  &quot;message&quot;: &quot;missing required title field&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C574</id>
+				<title>[API] POST /columns - Column Güncelleme (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli token mevcut olmalı. 
+
+2. Güncellenecek kolon mevcut ve kullanıcıya ait olmalı.</preconds>
+											<steps>1. PATCH /columns/{columnId} isteği gönder.
+
+2. Authorization header&apos;a geçerli token ekle.
+
+3. Path parametreye geçerli bir columnId koy.
+
+4. Request body’ye &quot;title&quot;: &quot;Done&quot; gibi bir değer gönder.</steps>
+											<expected>1. Status Code: 200 OK
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;Successful update&quot;
+} dönmelidir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C575</id>
+				<title>[API] POST /columns - Yetkisiz Güncelleme (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Token eksik veya geçersiz olmalı.
+
+2. Request body geçerli olmalı.
+
+
+</preconds>
+											<steps>1. PATCH /columns/{columnId} isteği gönder
+
+2. Authorization header’a yanlış veya boş token ekle
+
+3. Geçerli bir column ID kullan
+
+4. Body’ye geçerli bir title gir</steps>
+											<expected>1. Status Code: 401 Unauthorized 
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;Not authorized&quot;
+} dönmelidir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C576</id>
+				<title>[API] POST /columns -  Geçersiz Column (404)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Token geçerli olmalı.
+
+2. Gönderilen columnId sistemde bulunmamalı.</preconds>
+											<steps>1. PATCH /columns/{invalidColumnId} isteği gönder.
+
+2. Authorization token geçerli.
+
+3. Request body’de &quot;title&quot;: &quot;New Title&quot; olsun.
+
+4. columnId olarak geçersiz bir ID kullan.</steps>
+											<expected>1. Status Code: 404 Not Found
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;Not found&quot;
+} dönmelidir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C577</id>
+				<title>[API] POST /columns - Eksik Alan (400)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Geçerli token mevcut olmalı.
+
+2. columnId geçerli ama body alanı eksik olmalı.</preconds>
+											<steps>1. PATCH /columns/{columnId} isteği gönder.
+
+2. Authorization token değeri girilir.
+
+3. Body’yi boş gönder ya da title olmadan gönder: {}</steps>
+											<expected>1. Status Code: 400 Bad Request
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;missing fields&quot;
+}dönmelidir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C578</id>
+				<title>[API] DELETE /columns - Column Silme (200)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Kullanıcı sisteme giriş yapmış (geçerli token mevcut) olmalı.
+
+2. Silinecek kolon sistemde mevcut ve kullanıcıya ait olmalı.</preconds>
+											<steps>1. DELETE /columns/{columnId} endpoint’ine istek gönder.
+
+2. Authorization header’a geçerli token ekle.
+
+3. Path parametresine geçerli bir columnId gir.</steps>
+											<expected>1. Status Code: 200 OK
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;Column deleted&quot;
+} dönmelidir.</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C579</id>
+				<title>[API] DELETE /columns - Yetkisiz Erişim (401)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Authorization header eksik ya da token hatalı olmalı.
+
+2. columnId geçerli olmalı.</preconds>
+											<steps>1. DELETE /columns/{columnId} endpoint’ine istek gönder.
+
+2. Eksik ya da hatalı bir token gönder.
+
+</steps>
+											<expected>1. Status Code: 401 Unauthorized
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;Not authorized&quot;
+}</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C580</id>
+				<title>[API] DELETE /columns - Geçersiz Column (404)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+											<automation_type><id>0</id><value> None</value></automation_type>
+											<preconds>1. Authorization token geçerli olmalı.
+
+2. columnId sistemde bulunmamalı. (yanlış veya daha önce silinmiş)</preconds>
+											<steps>1. DELETE /columns/{invalidColumnId} endpoint’ine istek gönder.
+
+2. Geçerli token’ı ekle.
+
+3. Geçersiz bir columnId kullan.</steps>
+											<expected>1. Status Code: 404 Not Found
+
+2. Response Body:
+{
+  &quot;message&quot;: &quot;Not found&quot;
+}  dönmelidir.</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+	</sections>
+</suite>
