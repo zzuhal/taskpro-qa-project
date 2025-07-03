@@ -8,7 +8,7 @@ Bu proje, TaskPro isimli bir görev yönetimi uygulamasının UI ve API tarafı 
 
 ## 🔗 Proje Kaynakları
 
-- 🌐 **UI Uygulaması (Test Edilen Web Uygulama)**: [TaskPro QA Web App](https://task-pro-qa.b.goit.study/)
+- 🌐 **UI Uygulaması (Test Edilen Web Uygulama)**: [TaskPro QA Web App](https://task-pro-qa.f.goit.study/welcome)
 - 📚 **Swagger API Dokümantasyonu**: [Swagger Docs](https://task-pro-qa.b.goit.study/api-docs/#/)
 - 🎨 **Figma Tasarımı**: [Figma UI Design](https://www.figma.com/design/eZAtuel003P5Cp8tALfO5z/TaskPro--QA-?node-id=0-1&p=f)
 
