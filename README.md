@@ -1,9 +1,8 @@
 # TaskPro QA Project
 
-📌 **Manual & API Testing for TaskPro Web Application**
+Manual & API Testing for TaskPro application.
 
-Bu proje, TaskPro isimli bir görev yönetimi uygulamasının UI ve API tarafı için yapılan test çalışmalarını içermektedir. Proje kapsamında hem manuel hem de otomasyon temelli test çalışmaları yürütülmüştür.
-
+Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı arayüzü) ve API testlerinin manuel olarak hazırlanması ve çalıştırılması sürecini kapsamaktadır. Test senaryoları TestRail üzerinde yazılmış ve koşulmuştur. API testleri ayrıca Postman ile çalıştırılmış, Newman ile raporlanmıştır.
 ---
 
 ## 🔗 Proje Kaynakları
