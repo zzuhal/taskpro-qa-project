@@ -1,0 +1,2130 @@
+{
+	"info": {
+		"_postman_id": "6e1b6ccb-19dc-4c9e-9076-ec579b448682",
+		"name": "Express API for 'TaskPro' project (environment)",
+		"description": "REST API Application for 'TaskPro' project by ITDreamers, (GoIT), 2023\n\nContact Support:\n Name: Git repository",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19349862",
+		"_collection_link": "https://restless-eclipse-335233.postman.co/workspace/GoIT-QA~fd1d2ab4-77d9-4d23-8076-49f38ad52f0c/collection/19349862-6e1b6ccb-19dc-4c9e-9076-ec579b448682?action=share&source=collection_link&creator=19349862"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"item": [
+						{
+							"name": "User registration. (KAYIT)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"User Name\",\n  \"email\": \"aysemseker@gmail.com\",\n  \"password\": \"123456z.\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User registration. (negatif)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 409\", function () {\r",
+											"    pm.response.to.have.status(409);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has error message for email in use\", function () {\r",
+											"    let jsonData = pm.response.json();\r",
+											"    \r",
+											"    // Hata mesajı doğrudan \"Email already in use\" olabilir ya da başka bir şey. Uyum sağlamak için includes() kullanalım:\r",
+											"    pm.expect(jsonData.message || jsonData.error || \"\").to.include(\"Email\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"zuhal\",\r\n  \"email\": \"proje@gmail.com\",\r\n  \"password\": \"123456z.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User registration. (eksik alan)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has error message for missing fields\", function () {\r",
+											"    let jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message || jsonData.error || \"\").to.include(\"missing\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"proje@gmail.com\",\r\n  \"password\": \"123456z.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "User authentication. (Giriş)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has required login fields\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(jsonData).to.have.property(\"token\");\r",
+											"    pm.expect(jsonData).to.have.property(\"refreshToken\");\r",
+											"    pm.expect(jsonData).to.have.property(\"name\");\r",
+											"    pm.expect(jsonData).to.have.property(\"theme\");\r",
+											"    pm.expect(jsonData).to.have.property(\"avatar\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Token is a non-empty string\", function () {\r",
+											"    const token = pm.response.json().token;\r",
+											"    pm.expect(token).to.be.a(\"string\").and.to.have.length.above(10);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"proje29@gmail.com\",\r\n  \"password\": \"123456z.\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/user/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User authentication. (Giriş 400)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has error message for missing fields\", function () {\r",
+											"    let jsonData = pm.response.json();\r",
+											"    const message = (jsonData.message || jsonData.error || \"\").toLowerCase();\r",
+											"    pm.expect(message).to.include(\"missing\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"proje@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User authentication. (Yanlış Email veya Şifre-404)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"proje@gmail.com\",\r\n  \"password\": \"123456.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "refresh",
+					"item": [
+						{
+							"name": "User refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFiOWU1ODFjYzJjNzhjZDZhZTRlZSIsImlhdCI6MTc1MTAzODI1MCwiZXhwIjoxNzUyMjQ3ODUwfQ.DW7z9U_Yg_JEZYPKeV1dUyV3y8YyOhzWtmmNN1bHxw0\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/refresh",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User refresh token - 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/user/refresh",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User refresh token - 403",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {\r",
+											"    pm.response.to.have.status(403);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has error message about invalid token\", function () {\r",
+											"    let jsonData = pm.response.json();\r",
+											"    const message = (jsonData.message || jsonData.error || \"\").toLowerCase();\r",
+											"    pm.expect(message).to.include(\"invalid\").and.to.include(\"token\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUxOTgwMjA5fQ.3res1ueQKVZ8jRcY7cMHA8eTu9BWLXlMmqwv53kjRVA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/refresh",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "current",
+					"item": [
+						{
+							"name": "Get current user info",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has user info fields\", () => {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property(\"name\");\r",
+											"    pm.expect(jsonData).to.have.property(\"email\");\r",
+											"    pm.expect(jsonData).to.have.property(\"avatar\");\r",
+											"    pm.expect(jsonData).to.have.property(\"theme\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", () => {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/user/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get current user info - 401",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", () => {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", () => {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/user/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "User edit profile - 400",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"zuzu1\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/update",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User edit profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", () => {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"zuzu\",\r\n  \"email\": \"proje29@gmail.com\",\r\n  \"password\": \"123456z.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/update",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User edit profile - 401",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", () => {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFiOWU1ODFjYzJjNzhjZDZhZTRlZSIsImlhdCI6MTc1MDc5NjI2NiwiZXhwIjoxNzUwNzk3MTA2fQ.5yqeDYPCnzySHYwjAQ_3-Om2vIZ9qOAie-A3-p67gwM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/update",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User edit profile - 404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 409\", () => {\r",
+											"    pm.response.to.have.status(409);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Email conflict error message is present\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(msg).to.include(\"email\").and.to.include(\"use\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"zuzu\",\r\n  \"email\": \"a@gmail.com\",\r\n  \"password\": \"123456z.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/update",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "theme",
+					"item": [
+						{
+							"name": "User edit theme",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Theme is updated correctly\", () => {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property(\"theme\", \"light\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", () => {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"theme\": \"light\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/theme",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"theme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User edit theme - 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", () => {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is under 1000ms\", () => {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/theme",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"theme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User edit theme - 401",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"theme\": \"light\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/theme",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"theme"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"item": [
+						{
+							"name": "User logout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Logout status is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/user/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user logut -401",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUwNzcxNDQ5fQ.SC4hRE_FP5dZq8hoAXrv0kwKFxEnSVHVk9CfqIz4pQo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/user/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "boards",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "columns",
+							"item": [
+								{
+									"name": "{idColumn}",
+									"item": [
+										{
+											"name": "Update column by idColumn in a board by board id -400",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns/685d237e81cc2c78cd6ae5a8",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d237e81cc2c78cd6ae5a8"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update column by idColumn in a board by board id -404",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"title\": \"api ile güncellendi\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns/685d237e81cc2c78cd6ae5a7",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d237e81cc2c78cd6ae5a7"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update column by idColumn in a board by board id -401",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"title\": \"api ile güncellendi\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns/685d237e81cc2c78cd6ae5a8",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d237e81cc2c78cd6ae5a8"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update column by idColumn in a board by board id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message is 'Successful update'\", () => {\r",
+															"    const msg = pm.response.json().message || \"\";\r",
+															"    pm.expect(msg).to.eql(\"Successful update\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"api ile güncellendii\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns/685d237e81cc2c78cd6ae5a8",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d237e81cc2c78cd6ae5a8"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Add a new column into board by board id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code is 201\", () => {\r",
+															"    pm.response.to.have.status(201);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"To do2\",\n  \"board\": \"685cd9ac81cc2c78cd6ae54d\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Add a new column into board by board id -401",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"title\": \"To do2\",\r\n  \"board\": \"685cd9ac81cc2c78cd6ae54d\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Add a new column into board by board id - 400",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"board\": \"685cd9ac81cc2c78cd6ae54d\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete a single column by idColumn in board by id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Message is 'Column deleted'\", () => {\r",
+															"    const msg = pm.response.json().message || \"\";\r",
+															"    pm.expect(msg).to.eql(\"Column deleted\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/columns/685d23db81cc2c78cd6ae5b0",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d23db81cc2c78cd6ae5b0"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete a single column by idColumn in board by id - 401",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{base_url}}/columns/685d23db81cc2c78cd6ae5b0",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d23db81cc2c78cd6ae5b0"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete a single column by idColumn in board by id - 404",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{base_url}}/columns/685d23db81cc2c78cd6ae5b0",
+													"host": [
+														"{{base_url}}"
+													],
+													"path": [
+														"columns",
+														"685d23db81cc2c78cd6ae5b0"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Update single board by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", () => {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response message is correct\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(msg).to.include(\"successful\").and.to.include(\"update\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"board adi guncelleme\",\n  \"icon\": \"Another Icon\",\n  \"background\": \"Woods in Autemn\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/boards/685cd9e381cc2c78cd6ae550",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685cd9e381cc2c78cd6ae550"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update single board by id - 404 (negatif)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", () => {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Board not found message is present\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(msg).to.include(\"not\").and.to.include(\"found\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"board adi guncelleme\",\r\n  \"icon\": \"Another Icon\",\r\n  \"background\": \"Woods in Autemn\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/boards/685d137c81cc2c78cd6ae588",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685d137c81cc2c78cd6ae588"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update single board by id -400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", () => {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Validation error message is present\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(\r",
+											"        msg.includes(\"missing\") || msg.includes(\"validation\")\r",
+											"    ).to.be.true;\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"MY PROJECT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/boards/685cd9ac81cc2c78cd6ae54d",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685cd9ac81cc2c78cd6ae54d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update single board by id - 401",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", () => {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Authorization error message is present\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(msg).to.include(\"not\").and.to.include(\"authorized\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUwNzcxNDQ5fQ.SC4hRE_FP5dZq8hoAXrv0kwKFxEnSVHVk9CfqIz4pQo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"MY PROJECT\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/boards/685cd9ac81cc2c78cd6ae54d",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685cd9ac81cc2c78cd6ae54d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a single board by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is 'Board deleted'\", function () {\r",
+											"    const msg = pm.response.json().message || \"\";\r",
+											"    pm.expect(msg).to.eql(\"Board deleted\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/boards/685d13e881cc2c78cd6ae591",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685d13e881cc2c78cd6ae591"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a single board by id - 401",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message includes 'not authorized'\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(msg).to.include(\"not authorized\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/boards/685d13e881cc2c78cd6ae591",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685d13e881cc2c78cd6ae591"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a single board by id - 404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message includes 'Not found'\", () => {\r",
+											"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+											"    pm.expect(msg).to.include(\"not found\");  // küçük harfli\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/boards/685d13e881cc2c78cd6ae591",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"boards",
+										"685d13e881cc2c78cd6ae591"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add a single board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Board ID is returned\", () => {\r",
+									"    const res = pm.response.json();\r",
+									"    pm.expect(res).to.have.property(\"_id\");\r",
+									"    pm.expect(res._id).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is under 1000ms\", () => {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"silinecek\",\n  \"icon\": \"star\",\n  \"background\": \"https://some-cloud-name.com/path/to/image/bg.jpg\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/boards",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a single board. -400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", () => {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"My project2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/boards",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a single board -401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", () => {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUwNzcxNDQ5fQ.SC4hRE_FP5dZq8hoAXrv0kwKFxEnSVHVk9CfqIz4pQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"üçüncü board\",\r\n  \"icon\": \"star\",\r\n  \"background\": \"https://some-cloud-name.com/path/to/image/bg.jpg\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/boards",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all boards the User has access to",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an array\", () => {\r",
+									"    const res = pm.response.json();\r",
+									"    pm.expect(res).to.be.an(\"array\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Each board has required fields\", () => {\r",
+									"    const boards = pm.response.json();\r",
+									"    boards.forEach(board => {\r",
+									"        pm.expect(board).to.have.property(\"_id\");\r",
+									"        pm.expect(board).to.have.property(\"title\");\r",
+									"        pm.expect(board).to.have.property(\"icon\");\r",
+									"        pm.expect(board).to.have.property(\"columns\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Columns and tasks exist if available\", () => {\r",
+									"    const boards = pm.response.json();\r",
+									"    boards.forEach(board => {\r",
+									"        if (board.columns.length > 0) {\r",
+									"            board.columns.forEach(column => {\r",
+									"                pm.expect(column).to.have.property(\"tasks\");\r",
+									"            });\r",
+									"        }\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/boards",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all boards the User has access to -401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", () => {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Authorization error message is present\", () => {\r",
+									"    const msg = (pm.response.json().message || \"\").toLowerCase();\r",
+									"    pm.expect(msg).to.include(\"not\").and.to.include(\"authorized\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUwNzcxNDQ5fQ.SC4hRE_FP5dZq8hoAXrv0kwKFxEnSVHVk9CfqIz4pQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/boards",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"boards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://taskpro-api.onrender.com"
+		}
+	]
+}

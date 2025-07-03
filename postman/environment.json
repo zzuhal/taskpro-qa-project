@@ -1,0 +1,27 @@
+{
+	"id": "d6dd2a96-fe72-4a5a-9b57-d522686a5936",
+	"name": "task_pro",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "https://task-pro-qa.b.goit.study",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUwNzcxNDQ5fQ.SC4hRE_FP5dZq8hoAXrv0kwKFxEnSVHVk9CfqIz4pQo",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "refreshToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWFhMjdjODFjYzJjNzhjZDZhZTQ5ZCIsImlhdCI6MTc1MDc3MDYwOSwiZXhwIjoxNzUxOTgwMjA5fQ.3res1ueQKVZ8jRcY7cMHA8eTu9BWLXlMmqwv53kjRVA",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-06-30T13:47:40.972Z",
+	"_postman_exported_using": "Postman/11.51.4"
+}
