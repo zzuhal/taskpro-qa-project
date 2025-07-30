@@ -28,6 +28,7 @@ Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı aray�
 - Figma & Swagger & Google Sheets
   
 📁 - Proje Yapısı 
+```
 Proje Yapısı: taskpro-qa-project/
 ├── documents/
 │   ├── testplan.pdf              # Test plan dokümanı (PDF)
@@ -43,6 +44,7 @@ Proje Yapısı: taskpro-qa-project/
 │   ├── testrail-report-apitests.pdf      # API test senaryoları raporu
 │   └── testrail-report-ui.pdf             # UI test senaryoları raporu
 └── README.md                     # Proje açıklamaları
+```
 
 
 ## Raporlar
