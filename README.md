@@ -51,6 +51,11 @@ taskpro-qa-project/
 
 TestRail ve Newman ile oluşturduğum raporları `reports/` klasörü altında görüntüleyebilirsiniz. TestRail'de yazılmış manuel test senaryoları da `manual-tests/` klasörüne eklenmiştir.
 
+## Otomasyon Testleri Hakkında
+
+Otomasyon testleri öğrenme sürecim **henüz yeni başlamış olup**, Java dili ve Selenium framework’ü kullanarak IntelliJ IDEA ortamında geliştirmeye devam ediyorum. Proje kapsamında Selenium tabanlı otomasyon testlerini zamanla geliştirmeyi ve mevcut çalışmaları repoya eklemeyi planlıyorum.
+
+
 
 ## Proje Sahibi
 Zuhal Şeker  
