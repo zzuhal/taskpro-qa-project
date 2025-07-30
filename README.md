@@ -13,21 +13,20 @@ Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı aray�
 
 ## Proje Kapsamı 
 
-- Şartname ve Figma tasarımları ele alınarak, UI test senaryoları için hem pozitif hem negatif test senaryoları TestRail üzerinde hazırlandı.
-- Swagger dokümantasyonu incelenerek, API test senaryoları için hem pozitif hem negatif test senaryoları TestRail üzerinde hazırlandı.
-- TestRail üzerinden test senaryoları çalıştırıldı ve sonuçlara dair raporlar alındı.
-- Swagger dokümanı Postman’e import edilip, environment oluşturularak API endpoint’leri test edildi.
-- API testleri Newman kullanılarak koşturuldu ve sonuçlar hem HTML hem de PDF formatında raporlandı.
+- UI ve API uç noktaları için **manuel test senaryoları** yazıldı ve uygulandı.  
+- **Figma tasarımları** ve gereksinim dökümanlarına göre test senaryoları oluşturuldu.  
+- API testleri için **Postman koleksiyonu** hazırlandı ve çalıştırıldı.  
+- **Newman** kullanılarak API testleri otomatikleştirildi ve detaylı test raporları alındı.  
+- Tüm test senaryoları **TestRail** üzerinden dokümante edildi ve takip edildi.
    
-## Kullanılan Araçlar
+## 🔧 Kullanılan Araçlar ve Teknolojiler
 
-- Postman
-- Newman (HTML Extra Reporter)
-- TestRail
-- Git & GitHub & GitBash
-- Figma & Swagger & Google Sheets
+- **Test Yönetimi:** TestRail  
+- **API Testleri:** Postman, Newman  
+- **Dokümantasyon:** Swagger  
+- **Raporlama:** Newman HTML & PDF Raporları
   
-📁 - Proje Yapısı 
+## 📁 - Proje Yapısı 
 ```
 taskpro-qa-project/
 ├── documents/
