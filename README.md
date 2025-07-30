@@ -27,6 +27,23 @@ Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı aray�
 - Git & GitHub & GitBash
 - Figma & Swagger & Google Sheets
   
+📁 Proje Yapısı
+taskpro-qa-project/
+├── documents/                         
+│   └── testplan.pdf                   # Test plan dokümanı (PDF)
+├── manual-tests/                      
+│   └── taskpro.xml                    # Manuel test senaryoları (XML formatında)
+├── postman/                           
+│   ├── environment.json               # Environment ayarları
+│   ├── swagger.json                   # Swagger'dan alınan API tanımı
+│   └── taskpro.json                   # Postman koleksiyonu
+├── reports/                           
+│   ├── Newman Summary Report.pdf      # API test özeti (PDF)
+│   ├── newman-taskpro-report-2025-06-30.html  # HTML API test raporu
+│   ├── testrail-report-apitests.pdf   # API test senaryoları raporu
+│   └── testrail-report-ui.pdf         # UI test senaryoları raporu
+├── README.md                          # Proje açıklamaları
+
 ## Raporlar
 
 TestRail ve Newman ile oluşturduğum raporları `reports/` klasörü altında görüntüleyebilirsiniz. TestRail'de yazılmış manuel test senaryoları da `manual-tests/` klasörüne eklenmiştir.
