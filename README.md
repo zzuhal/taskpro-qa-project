@@ -29,7 +29,7 @@ Bu proje, verilen şartname ve Figma tasarımlarına göre UI (kullanıcı aray�
   
 📁 - Proje Yapısı 
 ```
-Proje Yapısı: taskpro-qa-project/
+taskpro-qa-project/
 ├── documents/
 │   ├── testplan.pdf              # Test plan dokümanı (PDF)
 │   ├── manual-tests/             # Manuel test senaryoları klasörü
@@ -42,7 +42,7 @@ Proje Yapısı: taskpro-qa-project/
 │   ├── Newman Summary Report.pdf         # API test özeti (PDF)
 │   ├── newman-taskpro-report-2025-06-30.html  # HTML API test raporu
 │   ├── testrail-report-apitests.pdf      # API test senaryoları raporu
-│   └── testrail-report-ui.pdf             # UI test senaryoları raporu
+│   └── testrail-report-ui.pdf            # UI test senaryoları raporu
 └── README.md                     # Proje açıklamaları
 ```
 
